@@ -1,23 +1,21 @@
-import { SITE_CONFIG } from "@/lib/constants";
+import Hero from "@/components/sections/Hero";
+import About from "@/components/sections/About";
+import Countdown from "@/components/sections/Countdown";
+import Rundown from "@/components/sections/Rundown";
+import Venue from "@/components/sections/Venue";
+import GalleryPreview from "@/components/sections/GalleryPreview";
+import RSVP from "@/components/sections/RSVP";
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-background">
-      {/* Hero placeholder */}
-      <section
-        id="beranda"
-        className="flex flex-col items-center justify-center min-h-screen px-6 text-center"
-      >
-        <h1 className="text-4xl md:text-6xl font-heading text-primary-dark mb-4">
-          {SITE_CONFIG.name}
-        </h1>
-        <p className="text-xl md:text-2xl font-accent text-accent mb-8">
-          {SITE_CONFIG.tagline}
-        </p>
-        <p className="text-lg text-primary-light max-w-2xl">
-          Website sedang dalam pengembangan. Nantikan informasi selengkapnya!
-        </p>
-      </section>
-    </main>
+    <>
+      <Hero />
+      <About />
+      <Countdown />
+      <Rundown />
+      <Venue />
+      <GalleryPreview />
+      <RSVP />
+    </>
   );
 }
