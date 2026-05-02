@@ -42,7 +42,7 @@ export default function Hero() {
           transition={{ duration: 0.8, delay: 0.4 }}
           className="font-heading text-4xl md:text-6xl lg:text-7xl font-bold mb-4"
         >
-          Keluarga Surosentono
+          Jejak Keluarga Warisan Kebersamaan
         </motion.h1>
 
         {/* Tagline */}
