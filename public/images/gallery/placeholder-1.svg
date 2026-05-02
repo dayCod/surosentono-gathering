@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600">
+  <rect width="800" height="600" fill="#D4A574"/>
+  <rect x="20" y="20" width="760" height="560" rx="8" fill="none" stroke="#C4956A" stroke-width="2" stroke-dasharray="8,4"/>
+  <!-- Camera icon -->
+  <rect x="355" y="220" width="90" height="65" rx="8" fill="none" stroke="#8B6914" stroke-width="3"/>
+  <circle cx="400" cy="252" r="18" fill="none" stroke="#8B6914" stroke-width="3"/>
+  <rect x="375" y="212" width="30" height="12" rx="4" fill="none" stroke="#8B6914" stroke-width="2"/>
+  <!-- Text -->
+  <text x="400" y="340" font-family="Georgia, serif" font-size="28" fill="#5D3A1A" text-anchor="middle" font-weight="bold">Kebersamaan Keluarga</text>
+  <text x="400" y="375" font-family="Georgia, serif" font-size="16" fill="#7A5230" text-anchor="middle">Gallery Photo 1</text>
+</svg>

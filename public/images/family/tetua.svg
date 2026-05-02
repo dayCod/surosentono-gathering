@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600">
+  <rect width="800" height="600" fill="#F0E0C8"/>
+  <rect x="20" y="20" width="760" height="560" rx="8" fill="none" stroke="#E0D0B8" stroke-width="2" stroke-dasharray="8,4"/>
+  <!-- Elder/person icon with hat -->
+  <circle cx="400" cy="205" r="25" fill="none" stroke="#7A4A20" stroke-width="3"/>
+  <path d="M365,270 Q365,240 400,240 Q435,240 435,270" fill="none" stroke="#7A4A20" stroke-width="3"/>
+  <line x1="375" y1="180" x2="425" y2="180" stroke="#7A4A20" stroke-width="3"/>
+  <path d="M380,180 Q400,165 420,180" fill="none" stroke="#7A4A20" stroke-width="2"/>
+  <!-- Star/respect symbol -->
+  <circle cx="360" cy="250" r="4" fill="#7A4A20" opacity="0.4"/>
+  <circle cx="440" cy="250" r="4" fill="#7A4A20" opacity="0.4"/>
+  <!-- Text -->
+  <text x="400" y="330" font-family="Georgia, serif" font-size="32" fill="#5D3A1A" text-anchor="middle" font-weight="bold">Para Tetua</text>
+  <text x="400" y="370" font-family="Georgia, serif" font-size="18" fill="#7A5230" text-anchor="middle">Sesepuh Keluarga Besar</text>
+  <text x="400" y="400" font-family="Georgia, serif" font-size="14" fill="#9A7250" text-anchor="middle" font-style="italic">Placeholder Image</text>
+</svg>

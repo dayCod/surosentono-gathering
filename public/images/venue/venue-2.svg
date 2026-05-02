@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600">
+  <rect width="800" height="600" fill="#B8D4B0"/>
+  <rect x="20" y="20" width="760" height="560" rx="8" fill="none" stroke="#A8C4A0" stroke-width="2" stroke-dasharray="8,4"/>
+  <!-- Building icon -->
+  <rect x="360" y="200" width="80" height="80" fill="none" stroke="#4A7B40" stroke-width="3"/>
+  <polygon points="400,175 345,210 455,210" fill="none" stroke="#4A7B40" stroke-width="3"/>
+  <rect x="385" y="245" width="30" height="35" fill="none" stroke="#4A7B40" stroke-width="2"/>
+  <rect x="365" y="215" width="18" height="18" fill="none" stroke="#4A7B40" stroke-width="2"/>
+  <rect x="417" y="215" width="18" height="18" fill="none" stroke="#4A7B40" stroke-width="2"/>
+  <!-- Text -->
+  <text x="400" y="340" font-family="Georgia, serif" font-size="28" fill="#2A4A22" text-anchor="middle" font-weight="bold">Venue - Area Dalam</text>
+  <text x="400" y="375" font-family="Georgia, serif" font-size="16" fill="#3A6030" text-anchor="middle">Ruang Pertemuan</text>
+</svg>

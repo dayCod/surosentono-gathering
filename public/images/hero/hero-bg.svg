@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600">
+  <!-- Gradient background -->
+  <defs>
+    <linearGradient id="heroGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#2C1810;stop-opacity:1"/>
+      <stop offset="50%" style="stop-color:#4A2C17;stop-opacity:1"/>
+      <stop offset="100%" style="stop-color:#1A0F08;stop-opacity:1"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="50%" cy="40%" r="50%">
+      <stop offset="0%" style="stop-color:#D4A574;stop-opacity:0.3"/>
+      <stop offset="100%" style="stop-color:#2C1810;stop-opacity:0"/>
+    </radialGradient>
+  </defs>
+  <rect width="800" height="600" fill="url(#heroGrad)"/>
+  <rect width="800" height="600" fill="url(#glow)"/>
+  <!-- Decorative batik-inspired pattern -->
+  <circle cx="200" cy="150" r="40" fill="none" stroke="#D4A574" stroke-width="1" opacity="0.2"/>
+  <circle cx="200" cy="150" r="25" fill="none" stroke="#D4A574" stroke-width="1" opacity="0.15"/>
+  <circle cx="600" cy="450" r="50" fill="none" stroke="#D4A574" stroke-width="1" opacity="0.2"/>
+  <circle cx="600" cy="450" r="30" fill="none" stroke="#D4A574" stroke-width="1" opacity="0.15"/>
+  <circle cx="700" cy="100" r="30" fill="none" stroke="#D4A574" stroke-width="1" opacity="0.1"/>
+  <circle cx="100" cy="500" r="35" fill="none" stroke="#D4A574" stroke-width="1" opacity="0.1"/>
+  <!-- Diamond decorative elements -->
+  <polygon points="400,120 420,140 400,160 380,140" fill="none" stroke="#D4A574" stroke-width="1.5" opacity="0.3"/>
+  <polygon points="400,130 410,140 400,150 390,140" fill="#D4A574" opacity="0.2"/>
+  <!-- Main text area -->
+  <text x="400" y="270" font-family="Georgia, serif" font-size="36" fill="#D4A574" text-anchor="middle" font-weight="bold">Surosentono Gathering</text>
+  <text x="400" y="310" font-family="Georgia, serif" font-size="20" fill="#C49564" text-anchor="middle">Reuni Akbar Keluarga Besar</text>
+  <line x1="300" y1="335" x2="500" y2="335" stroke="#D4A574" stroke-width="1" opacity="0.5"/>
+  <text x="400" y="370" font-family="Georgia, serif" font-size="16" fill="#A07548" text-anchor="middle" font-style="italic">Hero Background - Placeholder</text>
+  <!-- Corner ornaments -->
+  <path d="M30,30 L60,30 L60,35 L35,35 L35,60 L30,60 Z" fill="#D4A574" opacity="0.3"/>
+  <path d="M770,30 L740,30 L740,35 L765,35 L765,60 L770,60 Z" fill="#D4A574" opacity="0.3"/>
+  <path d="M30,570 L60,570 L60,565 L35,565 L35,540 L30,540 Z" fill="#D4A574" opacity="0.3"/>
+  <path d="M770,570 L740,570 L740,565 L765,565 L765,540 L770,540 Z" fill="#D4A574" opacity="0.3"/>
+</svg>
