@@ -1,4 +1,5 @@
 import SectionTitle from "@/components/ui/SectionTitle";
+import ScrollReveal from "@/components/ui/ScrollReveal";
 import { Users, Calendar, Heart } from "lucide-react";
 
 export default function About() {
@@ -13,7 +14,7 @@ export default function About() {
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid md:grid-cols-2 gap-12 items-center">
           {/* Kolom Kiri: Teks */}
-          <div>
+          <ScrollReveal direction="left">
             <SectionTitle
               subtitle="Silaturahmi"
               title="Tentang Acara"
@@ -51,18 +52,20 @@ export default function About() {
                 </div>
               ))}
             </div>
-          </div>
+          </ScrollReveal>
 
           {/* Kolom Kanan: Gambar */}
-          <div className="relative">
-            <img
-              src="/images/gallery/placeholder-1.svg"
-              alt="Keluarga Surosentono"
-              className="rounded-2xl shadow-xl w-full h-[400px] md:h-[500px] object-cover"
-            />
-            {/* Decorative element */}
-            <div className="absolute -bottom-4 -right-4 w-full h-full border-2 border-accent rounded-2xl -z-10" />
-          </div>
+          <ScrollReveal direction="right" delay={0.2}>
+            <div className="relative">
+              <img
+                src="/images/gallery/placeholder-1.svg"
+                alt="Keluarga Surosentono"
+                className="rounded-2xl shadow-xl w-full h-[400px] md:h-[500px] object-cover"
+              />
+              {/* Decorative element */}
+              <div className="absolute -bottom-4 -right-4 w-full h-full border-2 border-accent rounded-2xl -z-10" />
+            </div>
+          </ScrollReveal>
         </div>
       </div>
     </section>

@@ -22,13 +22,36 @@ const dancing = Dancing_Script({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://surosentono-gathering.vercel.app"),
-  title: "Gathering Keluarga Surosentono 2025",
+  title: "Gathering Keluarga Surosentono 2025 - Mempererat Silaturahmi",
   description:
-    "Mempererat Tali Silaturahmi - Acara gathering tahunan keluarga besar Surosentono",
+    "Undangan Gathering Keluarga Besar Surosentono 2025 di Bogor. Mari berkumpul mempererat tali silaturahmi antar generasi.",
+  keywords: ["gathering", "keluarga", "surosentono", "silaturahmi", "bogor"],
+  authors: [{ name: "Keluarga Surosentono" }],
   openGraph: {
     title: "Gathering Keluarga Surosentono 2025",
     description: "Mempererat Tali Silaturahmi Keluarga Besar",
-    images: ["/images/hero/hero-bg.svg"],
+    url: "https://surosentono-gathering.vercel.app",
+    siteName: "Gathering Keluarga Surosentono",
+    images: [
+      {
+        url: "/images/og-cover.svg",
+        width: 1200,
+        height: 630,
+        alt: "Gathering Keluarga Surosentono 2025",
+      },
+    ],
+    locale: "id_ID",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Gathering Keluarga Surosentono 2025",
+    description: "Mempererat Tali Silaturahmi Keluarga Besar",
+    images: ["/images/og-cover.svg"],
+  },
+  icons: {
+    icon: "/favicon.ico",
+    apple: "/apple-touch-icon.png",
   },
 };
 

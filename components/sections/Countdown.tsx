@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import { motion } from "framer-motion";
 import { eventData } from "@/data/event";
 
 interface TimeLeft {
@@ -88,14 +89,28 @@ export default function Countdown() {
   return (
     <section className="py-16 md:py-20 bg-primary-dark">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <p className="font-accent text-accent text-xl mb-2">Hitung Mundur</p>
-        <h2 className="font-heading text-3xl md:text-4xl text-white font-bold mb-10">
-          Menuju Hari Berkumpul
-        </h2>
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+        >
+          <p className="font-accent text-accent text-xl mb-2">Hitung Mundur</p>
+          <h2 className="font-heading text-3xl md:text-4xl text-white font-bold mb-10">
+            Menuju Hari Berkumpul
+          </h2>
+        </motion.div>
 
         <div className="flex justify-center gap-4 md:gap-8">
-          {timeUnits.map((unit) => (
-            <div key={unit.label} className="text-center">
+          {timeUnits.map((unit, index) => (
+            <motion.div
+              key={unit.label}
+              className="text-center"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+            >
               <div className="bg-white/10 backdrop-blur rounded-xl p-4 md:p-6 min-w-[70px] md:min-w-[100px]">
                 <span className="text-3xl md:text-5xl font-bold text-white font-heading">
                   {String(unit.value).padStart(2, "0")}
@@ -104,7 +119,7 @@ export default function Countdown() {
               <p className="text-white/60 text-sm md:text-base mt-2">
                 {unit.label}
               </p>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>

@@ -5,6 +5,8 @@ import { galleryData, getGalleryByCategory } from "@/data/gallery";
 import type { GalleryItem } from "@/data/gallery";
 import Lightbox from "@/components/ui/Lightbox";
 import SectionTitle from "@/components/ui/SectionTitle";
+import { ArrowLeft } from "lucide-react";
+import Link from "next/link";
 
 const categories = [
   { key: "semua", label: "Semua" },
@@ -42,6 +44,15 @@ export default function GaleriPage() {
   return (
     <div className="pt-24 pb-20 bg-background min-h-screen">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Back button */}
+        <Link
+          href="/"
+          className="inline-flex items-center gap-2 text-primary hover:text-primary-dark transition-colors mb-6"
+        >
+          <ArrowLeft size={18} />
+          Kembali ke Beranda
+        </Link>
+
         <SectionTitle
           subtitle="Momen Berharga"
           title="Galeri Lengkap"
@@ -76,6 +87,7 @@ export default function GaleriPage() {
               <img
                 src={photo.src}
                 alt={photo.alt}
+                loading="lazy"
                 className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
               />
               <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-colors flex items-center justify-center">

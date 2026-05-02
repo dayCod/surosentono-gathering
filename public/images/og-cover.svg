@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <!-- Background -->
+  <rect width="1200" height="630" fill="#2C1810"/>
+  
+  <!-- Gradient overlay -->
+  <defs>
+    <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#6B4226;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#2C1810;stop-opacity:1" />
+    </linearGradient>
+    <radialGradient id="glow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" style="stop-color:#D4A574;stop-opacity:0.2" />
+      <stop offset="100%" style="stop-color:#2C1810;stop-opacity:0" />
+    </radialGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#grad)"/>
+  <ellipse cx="600" cy="315" rx="400" ry="250" fill="url(#glow)"/>
+  
+  <!-- Decorative border -->
+  <rect x="40" y="40" width="1120" height="550" rx="8" fill="none" stroke="#D4A574" stroke-width="2" stroke-dasharray="8,4" opacity="0.5"/>
+  
+  <!-- Decorative corners -->
+  <path d="M60,80 L60,60 L80,60" fill="none" stroke="#D4A574" stroke-width="3"/>
+  <path d="M1140,80 L1140,60 L1120,60" fill="none" stroke="#D4A574" stroke-width="3"/>
+  <path d="M60,550 L60,570 L80,570" fill="none" stroke="#D4A574" stroke-width="3"/>
+  <path d="M1140,550 L1140,570 L1120,570" fill="none" stroke="#D4A574" stroke-width="3"/>
+  
+  <!-- Subtitle -->
+  <text x="600" y="220" text-anchor="middle" font-family="serif" font-size="28" fill="#D4A574" font-style="italic">Undangan Gathering</text>
+  
+  <!-- Main title -->
+  <text x="600" y="300" text-anchor="middle" font-family="serif" font-size="64" fill="#FFFFFF" font-weight="bold">Keluarga Surosentono</text>
+  
+  <!-- Year -->
+  <text x="600" y="360" text-anchor="middle" font-family="serif" font-size="36" fill="#FFFFFF" font-weight="bold">2025</text>
+  
+  <!-- Divider -->
+  <line x1="450" y1="390" x2="750" y2="390" stroke="#D4A574" stroke-width="2"/>
+  <circle cx="600" cy="390" r="4" fill="#D4A574"/>
+  
+  <!-- Tagline -->
+  <text x="600" y="440" text-anchor="middle" font-family="sans-serif" font-size="24" fill="#D4A574">Mempererat Tali Silaturahmi</text>
+  
+  <!-- Date & Location -->
+  <text x="600" y="500" text-anchor="middle" font-family="sans-serif" font-size="20" fill="rgba(255,255,255,0.7)">17 Agustus 2025 • Bogor, Jawa Barat</text>
+</svg>

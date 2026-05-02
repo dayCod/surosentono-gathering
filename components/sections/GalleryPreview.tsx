@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import SectionTitle from "@/components/ui/SectionTitle";
+import ScrollReveal from "@/components/ui/ScrollReveal";
 import Lightbox from "@/components/ui/Lightbox";
 import { getFeaturedGallery, galleryData } from "@/data/gallery";
 import Link from "next/link";
@@ -33,45 +34,50 @@ export default function GalleryPreview() {
   return (
     <section id="galeri" className="py-20 md:py-28 bg-white">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <SectionTitle
-          subtitle="Momen Berharga"
-          title="Galeri"
-          description="Kumpulan momen indah keluarga besar Surosentono"
-        />
+        <ScrollReveal>
+          <SectionTitle
+            subtitle="Momen Berharga"
+            title="Galeri"
+            description="Kumpulan momen indah keluarga besar Surosentono"
+          />
+        </ScrollReveal>
 
         {/* Photo Grid */}
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 md:gap-4">
           {displayPhotos.map((photo, index) => (
-            <button
-              key={photo.id}
-              onClick={() => openLightbox(index)}
-              className="relative group aspect-square rounded-xl overflow-hidden cursor-pointer"
-            >
-              <img
-                src={photo.src}
-                alt={photo.alt}
-                className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
-              />
-              {/* Hover Overlay */}
-              <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-colors flex items-center justify-center">
-                <span className="text-white opacity-0 group-hover:opacity-100 transition-opacity text-sm font-medium">
-                  Lihat Foto
-                </span>
-              </div>
-            </button>
+            <ScrollReveal key={photo.id} delay={index * 0.05}>
+              <button
+                onClick={() => openLightbox(index)}
+                className="relative group aspect-square rounded-xl overflow-hidden cursor-pointer w-full"
+              >
+                <img
+                  src={photo.src}
+                  alt={photo.alt}
+                  className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+                />
+                {/* Hover Overlay */}
+                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-colors flex items-center justify-center">
+                  <span className="text-white opacity-0 group-hover:opacity-100 transition-opacity text-sm font-medium">
+                    Lihat Foto
+                  </span>
+                </div>
+              </button>
+            </ScrollReveal>
           ))}
         </div>
 
         {/* CTA */}
-        <div className="text-center mt-10">
-          <Link
-            href="/galeri"
-            className="inline-flex items-center gap-2 px-8 py-4 bg-primary text-white rounded-full hover:bg-primary-dark transition-colors font-semibold text-lg"
-          >
-            Lihat Semua Foto
-            <ArrowRight size={18} />
-          </Link>
-        </div>
+        <ScrollReveal delay={0.3}>
+          <div className="text-center mt-10">
+            <Link
+              href="/galeri"
+              className="inline-flex items-center gap-2 px-8 py-4 bg-primary text-white rounded-full hover:bg-primary-dark transition-colors font-semibold text-lg"
+            >
+              Lihat Semua Foto
+              <ArrowRight size={18} />
+            </Link>
+          </div>
+        </ScrollReveal>
       </div>
 
       {/* Lightbox */}
