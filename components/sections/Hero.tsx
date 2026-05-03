@@ -15,7 +15,7 @@ export default function Hero() {
       {/* Background Image + Overlay */}
       <div className="absolute inset-0">
         <img
-          src="/images/hero/hero-bg.svg"
+          src="/images/hero/banner-landing-page.jpg"
           alt=""
           className="w-full h-full object-cover"
         />

@@ -43,7 +43,7 @@ export default function Navbar() {
               e.preventDefault();
               handleNavClick("#beranda");
             }}
-            className="font-heading text-lg md:text-xl font-bold text-primary-dark truncate"
+            className="font-heading text-lg md:text-xl font-bold text-primary truncate"
           >
             {SITE_CONFIG.name}
           </a>
@@ -58,7 +58,7 @@ export default function Navbar() {
                     e.preventDefault();
                     handleNavClick(link.href);
                   }}
-                  className="px-3 py-2 rounded-lg text-base font-medium text-primary-dark hover:text-primary hover:bg-accent/20 transition-colors"
+                  className="px-3 py-2 rounded-lg text-base font-medium text-primary hover:text-primary-light hover:bg-accent/20 transition-colors"
                 >
                   {link.label}
                 </a>
@@ -82,7 +82,7 @@ export default function Navbar() {
         <div
           className={cn(
             "md:hidden overflow-hidden transition-all duration-300 ease-in-out",
-            isMobileMenuOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
+            isMobileMenuOpen ? "max-h-96 opacity-100 bg-background/95 backdrop-blur-md" : "max-h-0 opacity-0 bg-background/95 backdrop-blur-md"
           )}
         >
           <ul className="pb-4 space-y-1">
@@ -94,7 +94,7 @@ export default function Navbar() {
                     e.preventDefault();
                     handleNavClick(link.href);
                   }}
-                  className="block px-4 py-3 rounded-lg text-base font-medium text-primary-dark hover:text-primary hover:bg-accent/20 transition-colors"
+                  className="block px-4 py-3 rounded-lg text-base font-medium text-primary-light hover:text-primary hover:bg-accent/20 transition-colors"
                 >
                   {link.label}
                 </a>

@@ -9,9 +9,9 @@ export const eventData: {
   status: EventStatus;
 } = {
   nama: "Gathering Keluarga Surosentono 2025",
-  tanggal: "2025-08-17", // Format: YYYY-MM-DD (sesuaikan tanggal asli)
+  tanggal: "2027-03-25", // Format: YYYY-MM-DD (sesuaikan tanggal asli)
   waktu: "07:00 WIB - Selesai",
-  tagline: "Mempererat Tali Silaturahmi",
+  tagline: "Halal Bihalal Keluarga Besar Surosentono",
   deskripsi:
     "Acara gathering tahunan keluarga besar Surosentono untuk mempererat tali silaturahmi antar generasi. Mari berkumpul, berbagi cerita, dan membangun kenangan indah bersama.",
   status: "pre-event", // Ubah ke "post-event" setelah acara selesai

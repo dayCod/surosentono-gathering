@@ -5,8 +5,8 @@ import { Users, Calendar, Heart } from "lucide-react";
 export default function About() {
   const highlights = [
     { icon: Users, label: "Keluarga", value: "50+" },
-    { icon: Calendar, label: "Tahun Tradisi", value: "10+" },
-    { icon: Heart, label: "Generasi", value: "4" },
+    { icon: Calendar, label: "Tahun Tradisi", value: "5" },
+    { icon: Heart, label: "Generasi", value: "3" },
   ];
 
   return (

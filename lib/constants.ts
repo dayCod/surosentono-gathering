@@ -3,7 +3,7 @@ export const SITE_CONFIG = {
   tagline: "Mempererat Tali Silaturahmi",
   url: "https://surosentono-gathering.vercel.app",
   whatsappNumber: "62812XXXXXXXX", // Ganti dengan nomor WA panitia
-  googleFormUrl: "https://forms.gle/XXXXX", // Ganti dengan URL Google Form RSVP
+  googleFormUrl: "https://docs.google.com/forms/d/e/1FAIpQLSediQ_lHAOCIEGeEXmghEDrlmTtNB5KmR8dopiaHfv5gmysAg/viewform", // Ganti dengan URL Google Form RSVP
 };
 
 export const NAV_LINKS = [

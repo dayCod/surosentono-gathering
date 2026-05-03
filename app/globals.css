@@ -2,7 +2,7 @@
 
 @theme inline {
   /* Colors - Earth Tone Sunda */
-  --color-primary: #6B4226;
+  --color-primary: #c38a5f;
   --color-primary-light: #A67B5B;
   --color-primary-dark: #2C1810;
   --color-secondary: #A67B5B;
@@ -10,7 +10,7 @@
   --color-background: #FDF8F3;
   --color-foreground: #2C1810;
   --color-success: #4A7C59;
-
+  --color-white: #FFFFFF;
   /* Fonts */
   --font-heading: var(--font-playfair), serif;
   --font-body: var(--font-inter), sans-serif;

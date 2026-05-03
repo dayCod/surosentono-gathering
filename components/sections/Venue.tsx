@@ -83,7 +83,7 @@ export default function Venue() {
               {/* Fasilitas */}
               <div>
                 <h4 className="font-semibold text-primary-dark mb-2 flex items-center gap-2">
-                  <Car size={18} /> Fasilitas
+                  <Car size={18} /> Fasilitas yang didapatkan
                 </h4>
                 <div className="flex flex-wrap gap-2">
                   {venueData.fasilitas.map((item) => (
