@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect, useCallback } from "react";
 import SectionTitle from "@/components/ui/SectionTitle";
 import ScrollReveal from "@/components/ui/ScrollReveal";
 import { venueData } from "@/data/venue";
@@ -15,15 +15,35 @@ import {
 
 export default function Venue() {
   const [currentImage, setCurrentImage] = useState(0);
+  const [isAutoPlaying, setIsAutoPlaying] = useState(true);
 
-  const nextImage = () => {
+  const nextImage = useCallback(() => {
     setCurrentImage((prev) => (prev + 1) % venueData.images.length);
-  };
+  }, []);
 
-  const prevImage = () => {
+  const prevImage = useCallback(() => {
     setCurrentImage((prev) =>
       prev === 0 ? venueData.images.length - 1 : prev - 1
     );
+  }, []);
+
+  // Autoplay
+  useEffect(() => {
+    if (!isAutoPlaying || venueData.images.length <= 1) return;
+
+    const interval = setInterval(() => {
+      nextImage();
+    }, 5000);
+
+    return () => clearInterval(interval);
+  }, [isAutoPlaying, nextImage]);
+
+  // Pause autoplay on user interaction, resume after delay
+  const handleUserInteraction = (action: () => void) => {
+    setIsAutoPlaying(false);
+    action();
+    // Resume autoplay after 10 seconds of no interaction
+    setTimeout(() => setIsAutoPlaying(true), 10000);
   };
 
   return (
@@ -116,24 +136,40 @@ export default function Venue() {
                 Suasana Venue
               </h3>
               <div className="relative rounded-xl overflow-hidden h-[250px] md:h-[400px]">
-                <img
-                  src={venueData.images[currentImage].src}
-                  alt={venueData.images[currentImage].alt}
-                  className="w-full h-full object-cover transition-opacity duration-300"
-                />
+                {/* Stacked images for smooth crossfade */}
+                {venueData.images.map((image, idx) => (
+                  <img
+                    key={idx}
+                    src={image.src}
+                    alt={image.alt}
+                    className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-700 ease-in-out ${
+                      idx === currentImage ? "opacity-100" : "opacity-0"
+                    }`}
+                  />
+                ))}
+
+                {/* Image overlay for text readability */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+
+                {/* Caption */}
+                <div className="absolute bottom-12 left-6 text-white">
+                  <h4 className="text-2xl md:text-4xl font-heading font-bold uppercase tracking-wide">
+                    {/* {venueData.images[currentImage].alt} */}
+                  </h4>
+                </div>
 
                 {/* Navigation Arrows */}
                 {venueData.images.length > 1 && (
                   <>
                     <button
-                      onClick={prevImage}
+                      onClick={() => handleUserInteraction(prevImage)}
                       className="absolute left-4 top-1/2 -translate-y-1/2 p-2 bg-black/50 text-white rounded-full hover:bg-black/70 transition-colors"
                       aria-label="Foto sebelumnya"
                     >
                       <ChevronLeft size={24} />
                     </button>
                     <button
-                      onClick={nextImage}
+                      onClick={() => handleUserInteraction(nextImage)}
                       className="absolute right-4 top-1/2 -translate-y-1/2 p-2 bg-black/50 text-white rounded-full hover:bg-black/70 transition-colors"
                       aria-label="Foto berikutnya"
                     >
@@ -147,9 +183,9 @@ export default function Venue() {
                   {venueData.images.map((_, idx) => (
                     <button
                       key={idx}
-                      onClick={() => setCurrentImage(idx)}
-                      className={`w-2.5 h-2.5 rounded-full transition-colors ${
-                        idx === currentImage ? "bg-white" : "bg-white/50"
+                      onClick={() => handleUserInteraction(() => setCurrentImage(idx))}
+                      className={`w-2.5 h-2.5 rounded-full transition-all duration-300 ${
+                        idx === currentImage ? "bg-white scale-125" : "bg-white/50"
                       }`}
                       aria-label={`Lihat foto ${idx + 1}`}
                     />
