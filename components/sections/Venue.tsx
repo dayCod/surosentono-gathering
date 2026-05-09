@@ -151,6 +151,18 @@ export default function Venue() {
                 {/* Image overlay for text readability */}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
 
+                {/* Text Overlay — Judul & Subtitle gambar */}
+                <div className="absolute bottom-12 left-6 md:left-10 z-10">
+                  <h4 className="text-2xl md:text-4xl font-heading font-bold text-white tracking-wide drop-shadow-lg">
+                    {venueData.images[currentImage].title}
+                  </h4>
+                  {venueData.images[currentImage].subtitle && (
+                    <p className="text-sm md:text-lg text-white/80 mt-1 drop-shadow-md">
+                      {venueData.images[currentImage].subtitle}
+                    </p>
+                  )}
+                </div>
+
                 {/* Navigation Arrows */}
                 {venueData.images.length > 1 && (
                   <>
