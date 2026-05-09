@@ -20,7 +20,7 @@ export default function SectionTitle({
       className={cn("mb-12", align === "center" ? "text-center" : "text-left")}
     >
       {subtitle && (
-        <span className="text-accent font-bold text-xs md:text-sm uppercase tracking-widest mb-2 block">
+        <span className="text-accent font-bold text-xs md:text-sm uppercase tracking-widest mb-2 block font-bernardston">
           {subtitle}
         </span>
       )}

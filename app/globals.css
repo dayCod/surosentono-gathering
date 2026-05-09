@@ -1,5 +1,16 @@
 @import "tailwindcss";
 
+@font-face {
+  font-family: 'Bernardston';
+  src: url('/fonts/bernardston/BernardstonDemoRegular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.font-bernardston {
+  font-family: 'Bernardston', sans-serif;
+}
+
 @theme inline {
   /* Colors - Purple & Gold (dari poster) */
   --color-primary: #6D28D9;

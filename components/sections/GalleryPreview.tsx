@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { motion } from "framer-motion";
 import SectionTitle from "@/components/ui/SectionTitle";
 import ScrollReveal from "@/components/ui/ScrollReveal";
 import Lightbox from "@/components/ui/Lightbox";
@@ -32,7 +33,31 @@ export default function GalleryPreview() {
   };
 
   return (
-    <section id="galeri" className="py-20 md:py-28 bg-background-alt relative overflow-hidden">
+    <section id="galeri" className="py-20 md:py-28 bg-background-alt/70 relative overflow-hidden">
+      {/* Decorative blobs */}
+      <div className="absolute top-0 left-0 w-64 h-64 bg-primary/10 blur-[70px] rounded-full -translate-x-1/2 -translate-y-1/2" />
+      <div className="absolute bottom-0 right-0 w-64 h-64 bg-primary/10 blur-[70px] rounded-full translate-x-1/2 translate-y-1/2" />
+
+      {/* Background Texture Overlay */}
+      <motion.div
+        className="absolute inset-0 pointer-events-none mix-blend-soft-light"
+        initial={{ opacity: 0 }}
+        animate={{
+          opacity: [0.4, 0.6, 0.4],
+          scale: [1, 1.05, 1],
+        }}
+        transition={{
+          duration: 8,
+          repeat: Infinity,
+          ease: "easeInOut"
+        }}
+      >
+        <img
+          src="/images/branding/texture-background.png"
+          alt=""
+          className="w-full h-full object-cover"
+        />
+      </motion.div>
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <ScrollReveal>
           <SectionTitle

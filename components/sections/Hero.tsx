@@ -24,47 +24,31 @@ export default function Hero() {
 
       {/* Content */}
       <div className="relative z-10 text-center text-white px-4 max-w-5xl mx-auto">
-        {/* Subtitle / Label */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-          className="mb-2"
-        >
-          <span className="inline-block px-3 py-1 md:px-4 md:py-1 bg-accent text-primary-dark font-bold text-xs md:text-sm tracking-widest uppercase rounded">
-            Halal Bi Halal
-          </span>
-        </motion.div>
-
-        {/* Accent Tagline */}
+        {/* Branding Image — menggantikan subtitle, tagline, dan main title */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.3 }}
+          className="mb-[-10px] md:mb-[-20px] flex justify-center"
         >
-          <p className="text-accent font-accent text-xl md:text-2xl lg:text-3xl italic mb-2">
-            Jejak Warisan
-          </p>
+          <img
+            src="/images/branding/moto.png"
+            alt="Jejak Warisan Mbah Suro Sentono"
+            className="w-[300px] mb-15 sm:w-[360px] md:w-[450px] lg:w-[530px] xl:w-[620px] h-auto"
+          />
         </motion.div>
 
-        {/* Main Title */}
-        <motion.h1
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.4 }}
-          className="font-heading text-4xl md:text-7xl lg:text-8xl xl:text-9xl font-black mb-4 md:mb-6 tracking-tighter leading-none"
-        >
-          MBAH SURO <span className="text-accent">SENTONO</span>
-        </motion.h1>
-
-        {/* Tagline / Deskripsi */}
         <motion.p
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.6 }}
-          className="text-base md:text-xl lg:text-2xl text-foreground-secondary mb-8 md:mb-10 max-w-2xl mx-auto px-4"
+          className="mb-[-10px] md:mb-[-20px] flex justify-center"
         >
-          {eventData.tagline}
+          <img
+            src="/images/branding/organized-by.png"
+            alt="Jejak Warisan Mbah Suro Sentono"
+            className="w-[175px] md:w-[250px] mb-15 h-auto"
+          />
         </motion.p>
 
         {/* Info tanggal & lokasi */}

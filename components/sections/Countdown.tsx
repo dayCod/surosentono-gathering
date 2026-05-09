@@ -87,10 +87,31 @@ export default function Countdown() {
   ];
 
   return (
-    <section className="py-16 md:py-20 bg-background-alt relative overflow-hidden">
+    <section className="py-16 md:py-20 bg-background-alt/70 relative overflow-hidden">
       {/* Decorative blobs */}
-      <div className="absolute top-0 left-0 w-64 h-64 bg-primary/20 blur-[100px] rounded-full -translate-x-1/2 -translate-y-1/2" />
-      <div className="absolute bottom-0 right-0 w-64 h-64 bg-accent/10 blur-[100px] rounded-full translate-x-1/2 translate-y-1/2" />
+      <div className="absolute top-0 left-0 w-64 h-64 bg-primary/10 blur-[70px] rounded-full -translate-x-1/2 -translate-y-1/2" />
+      <div className="absolute bottom-0 right-0 w-64 h-64 bg-primary/10 blur-[70px] rounded-full translate-x-1/2 translate-y-1/2" />
+
+      {/* Background Texture Overlay */}
+      <motion.div
+        className="absolute inset-0 pointer-events-none mix-blend-soft-light"
+        initial={{ opacity: 0 }}
+        animate={{
+          opacity: [0.4, 0.6, 0.4],
+          scale: [1, 1.05, 1],
+        }}
+        transition={{
+          duration: 5,
+          repeat: Infinity,
+          ease: "easeInOut"
+        }}
+      >
+        <img
+          src="/images/branding/texture-background.png"
+          alt=""
+          className="w-full h-full object-cover"
+        />
+      </motion.div>
 
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
         <motion.div

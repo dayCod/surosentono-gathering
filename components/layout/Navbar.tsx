@@ -35,7 +35,7 @@ export default function Navbar() {
       )}
     >
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16 md:h-20">
+        <div className="flex items-center justify-between h-20 md:h-32">
           {/* Logo / Nama Acara */}
           <a
             href="#beranda"
@@ -43,9 +43,13 @@ export default function Navbar() {
               e.preventDefault();
               handleNavClick("#beranda");
             }}
-            className="font-heading text-lg md:text-xl font-bold text-white truncate max-w-[200px] md:max-w-none"
+            className="flex items-center"
           >
-            {SITE_CONFIG.name}
+            <img
+              src="/images/branding/logo-organizer.png"
+              alt="Halal Bi Halal — Jejak Warisan Suro Sentono"
+              className="h-10 md:h-15 w-auto"
+            />
           </a>
 
           {/* Desktop Navigation */}
