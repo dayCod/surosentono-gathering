@@ -79,11 +79,11 @@ export default function Venue() {
           <ScrollReveal direction="right" delay={0.2}>
             <div className="space-y-6">
               <div>
-                <h3 className="text-3xl font-heading font-bold text-white mb-3 tracking-tight">
+                <h3 className="text-xl md:text-3xl font-heading font-bold text-white mb-3 tracking-tight">
                   {venueData.nama}
                 </h3>
-                <p className="text-foreground-secondary flex items-start gap-3 leading-relaxed">
-                  <MapPin size={20} className="mt-1 shrink-0 text-accent" />
+                <p className="text-foreground-secondary flex items-start gap-3 leading-relaxed text-sm md:text-base">
+                  <MapPin size={18} className="mt-1 shrink-0 text-accent md:w-5 md:h-5" />
                   {venueData.alamat}
                 </p>
               </div>
@@ -93,23 +93,23 @@ export default function Venue() {
                 href={venueData.mapsLink}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-8 py-4 bg-accent text-primary-dark rounded-full hover:bg-accent-hover hover:scale-105 transition-all font-bold shadow-xl shadow-accent/20"
+                className="inline-flex items-center gap-2 px-6 py-3 md:px-8 md:py-4 bg-accent text-primary-dark rounded-full hover:bg-accent-hover hover:scale-105 transition-all font-bold shadow-xl shadow-accent/20 text-sm md:text-base"
               >
-                <MapPin size={20} />
+                <MapPin size={18} className="md:w-5 md:h-5" />
                 Buka di Google Maps
-                <ExternalLink size={16} />
+                <ExternalLink size={14} className="md:w-4 md:h-4" />
               </a>
 
               {/* Fasilitas */}
               <div>
-                <h4 className="font-bold text-white mb-3 flex items-center gap-2">
-                  <Car size={20} className="text-accent" /> Fasilitas yang didapatkan
+                <h4 className="font-bold text-white mb-3 flex items-center gap-2 text-sm md:text-base">
+                  <Car size={18} className="text-accent md:w-5 md:h-5" /> Fasilitas yang didapatkan
                 </h4>
                 <div className="flex flex-wrap gap-2">
                   {venueData.fasilitas.map((item) => (
                     <span
                       key={item}
-                      className="px-4 py-1.5 bg-accent/10 text-accent border border-accent/20 rounded-full text-sm font-medium"
+                      className="px-3 py-1 md:px-4 md:py-1.5 bg-accent/10 text-accent border border-accent/20 rounded-full text-xs md:text-sm font-medium"
                     >
                       {item}
                     </span>
@@ -118,11 +118,11 @@ export default function Venue() {
               </div>
 
               {/* Dress Code */}
-              <div className="p-4 bg-background-card/50 backdrop-blur-sm border border-white/5 rounded-xl">
-                <h4 className="font-bold text-white mb-2 flex items-center gap-2">
-                  <Shirt size={20} className="text-accent" /> Dress Code
+              <div className="p-4 md:p-6 bg-background-card/50 backdrop-blur-sm border border-white/5 rounded-xl">
+                <h4 className="font-bold text-white mb-2 flex items-center gap-2 text-sm md:text-base">
+                  <Shirt size={18} className="text-accent md:w-5 md:h-5" /> Dress Code
                 </h4>
-                <p className="text-foreground-secondary">{venueData.dressCode}</p>
+                <p className="text-foreground-secondary text-sm md:text-base">{venueData.dressCode}</p>
               </div>
             </div>
           </ScrollReveal>

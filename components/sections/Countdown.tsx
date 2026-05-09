@@ -105,7 +105,7 @@ export default function Countdown() {
           </h2>
         </motion.div>
 
-        <div className="flex justify-center gap-4 md:gap-8">
+        <div className="flex justify-center gap-3 md:gap-8">
           {timeUnits.map((unit, index) => (
             <motion.div
               key={unit.label}
@@ -115,12 +115,12 @@ export default function Countdown() {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
             >
-              <div className="bg-purple-800/20 backdrop-blur-md border border-white/5 rounded-2xl p-4 md:p-6 min-w-[80px] md:min-w-[120px] shadow-xl shadow-black/20">
-                <span className="text-4xl md:text-6xl font-black text-accent font-heading leading-none">
+              <div className="bg-purple-800/20 backdrop-blur-md border border-white/5 rounded-2xl p-3 md:p-6 min-w-[65px] md:min-w-[120px] shadow-xl shadow-black/20">
+                <span className="text-3xl md:text-6xl font-black text-accent font-heading leading-none">
                   {String(unit.value).padStart(2, "0")}
                 </span>
               </div>
-              <p className="text-foreground-muted text-sm md:text-base mt-3 font-medium uppercase tracking-wider">
+              <p className="text-foreground-muted text-[10px] md:text-base mt-3 font-medium uppercase tracking-wider">
                 {unit.label}
               </p>
             </motion.div>

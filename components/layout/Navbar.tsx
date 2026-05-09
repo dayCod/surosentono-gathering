@@ -43,7 +43,7 @@ export default function Navbar() {
               e.preventDefault();
               handleNavClick("#beranda");
             }}
-            className="font-heading text-lg md:text-xl font-bold text-white truncate"
+            className="font-heading text-lg md:text-xl font-bold text-white truncate max-w-[200px] md:max-w-none"
           >
             {SITE_CONFIG.name}
           </a>

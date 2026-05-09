@@ -6,8 +6,8 @@
   --color-primary-light: #8B5CF6;
   --color-primary-dark: #4C1D95;
   --color-secondary: #5B21B6;
-  --color-accent: #FACC15;
-  --color-accent-hover: #FDE047;
+  --color-accent: oklch(89.7% 0.196 126.665);
+  --color-accent-hover: oklch(92% 0.15 126);
   --color-background: #0F0A1A;
   --color-background-alt: #1A1130;
   --color-background-card: #1E1538;

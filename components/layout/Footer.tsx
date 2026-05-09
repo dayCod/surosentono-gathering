@@ -10,14 +10,14 @@ export default function Footer() {
       <div className="w-full h-px bg-gradient-to-r from-accent/0 via-accent to-accent/0" />
 
       {/* Content */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-12">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-12 text-center md:text-left">
           {/* Kolom 1: Info Acara */}
           <div>
-            <h3 className="font-heading text-xl md:text-2xl font-bold text-accent mb-3">
+            <h3 className="font-heading text-lg md:text-2xl font-bold text-accent mb-3">
               {SITE_CONFIG.name}
             </h3>
-            <p className="text-sm md:text-base text-foreground-secondary leading-relaxed">
+            <p className="text-xs md:text-base text-foreground-secondary leading-relaxed">
               {SITE_CONFIG.tagline}. Halal Bi Halal Keluarga Besar
               Suro Sentono untuk mempererat tali silaturahmi antar generasi.
             </p>

@@ -60,28 +60,28 @@ export default function Rundown() {
                     }`}
                   >
                     {/* Dot on timeline */}
-                    <div className="absolute left-4 md:left-1/2 w-3 h-3 bg-accent rounded-full shadow-[0_0_10px_rgba(250,204,21,0.5)] -translate-x-1/2 z-10 mt-7" />
+                    <div className="absolute left-4 md:left-1/2 w-3 h-3 bg-accent rounded-full shadow-[0_0_15px_rgba(190,242,100,0.6)] -translate-x-1/2 z-10 mt-7" />
 
                     {/* Spacer for desktop alternating layout */}
                     <div className="hidden md:block md:w-1/2" />
 
                     {/* Card */}
                     <div className="ml-10 md:ml-0 md:w-1/2">
-                      <div className="bg-background-card/40 backdrop-blur-sm border border-white/5 rounded-2xl p-6 shadow-xl shadow-black/20 hover:border-accent/20 transition-all group">
-                        <div className="flex items-center gap-4 mb-4">
-                          <div className="p-3 bg-accent/10 rounded-xl group-hover:bg-accent/20 transition-colors">
-                            <Icon size={24} className="text-accent" />
+                      <div className="bg-background-card/40 backdrop-blur-sm border border-white/5 rounded-2xl p-4 md:p-6 shadow-xl shadow-black/20 hover:border-accent/20 transition-all group">
+                        <div className="flex items-center gap-3 md:gap-4 mb-4">
+                          <div className="p-2 md:p-3 bg-accent/10 rounded-xl group-hover:bg-accent/20 transition-colors">
+                            <Icon size={20} className="text-accent md:w-6 md:h-6" />
                           </div>
                           <div className="flex flex-col">
-                            <span className="text-xs font-bold text-accent uppercase tracking-widest">
+                            <span className="text-[10px] md:text-xs font-bold text-accent uppercase tracking-widest">
                               {item.waktuMulai} - {item.waktuSelesai}
                             </span>
-                            <h3 className="text-xl md:text-2xl font-heading font-bold text-white">
+                            <h3 className="text-lg md:text-2xl font-heading font-bold text-white">
                               {item.judul}
                             </h3>
                           </div>
                         </div>
-                        <p className="text-foreground-secondary text-base leading-relaxed">
+                        <p className="text-foreground-secondary text-sm md:text-base leading-relaxed">
                           {item.deskripsi}
                         </p>
                       </div>

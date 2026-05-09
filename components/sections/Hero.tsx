@@ -31,7 +31,7 @@ export default function Hero() {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="mb-2"
         >
-          <span className="inline-block px-4 py-1 bg-accent text-primary-dark font-bold text-sm tracking-widest uppercase rounded">
+          <span className="inline-block px-3 py-1 md:px-4 md:py-1 bg-accent text-primary-dark font-bold text-xs md:text-sm tracking-widest uppercase rounded">
             Halal Bi Halal
           </span>
         </motion.div>
@@ -42,7 +42,7 @@ export default function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.3 }}
         >
-          <p className="text-accent font-accent text-2xl md:text-3xl italic mb-2">
+          <p className="text-accent font-accent text-xl md:text-2xl lg:text-3xl italic mb-2">
             Jejak Warisan
           </p>
         </motion.div>
@@ -52,9 +52,9 @@ export default function Hero() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
-          className="font-heading text-5xl md:text-8xl lg:text-9xl font-black mb-6 tracking-tighter leading-none"
+          className="font-heading text-4xl md:text-7xl lg:text-8xl xl:text-9xl font-black mb-4 md:mb-6 tracking-tighter leading-none"
         >
-          SURO <span className="text-accent">SENTONO</span>
+          MBAH SURO <span className="text-accent">SENTONO</span>
         </motion.h1>
 
         {/* Tagline / Deskripsi */}
@@ -62,7 +62,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.6 }}
-          className="text-lg md:text-2xl text-foreground-secondary mb-10 max-w-2xl mx-auto"
+          className="text-base md:text-xl lg:text-2xl text-foreground-secondary mb-8 md:mb-10 max-w-2xl mx-auto px-4"
         >
           {eventData.tagline}
         </motion.p>
@@ -72,15 +72,15 @@ export default function Hero() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.8 }}
-          className="flex flex-col sm:flex-row items-center justify-center gap-6 mb-12 text-white/90 font-medium"
+          className="flex flex-col sm:flex-row items-center justify-center gap-4 md:gap-6 mb-10 md:mb-12 text-white/90 font-medium text-sm md:text-base"
         >
           <span className="flex items-center gap-2">
-            <Calendar size={20} className="text-accent" />
+            <Calendar size={18} className="text-accent md:w-5 md:h-5" />
             <span>27-28 MARET 2027</span>
           </span>
           <span className="hidden sm:block text-white/30">|</span>
           <span className="flex items-center gap-2">
-            <MapPin size={20} className="text-accent" />
+            <MapPin size={18} className="text-accent md:w-5 md:h-5" />
             <span>Bina Karakter Hall</span>
           </span>
         </motion.div>
@@ -90,19 +90,19 @@ export default function Hero() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 1.0 }}
-          className="flex flex-col sm:flex-row items-center justify-center gap-4"
+          className="flex flex-col sm:flex-row items-center justify-center gap-4 px-6 sm:px-0"
         >
           <a
             href={SITE_CONFIG.googleFormUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="w-full sm:w-auto px-10 py-5 bg-accent text-primary-dark font-black rounded-full hover:bg-accent-hover hover:scale-105 transition-all text-lg shadow-xl shadow-accent/20"
+            className="w-full sm:w-auto px-8 py-3 md:px-10 md:py-5 bg-accent text-primary-dark font-black rounded-full hover:bg-accent-hover hover:scale-105 transition-all text-base md:text-lg shadow-xl shadow-accent/20"
           >
             Konfirmasi Kehadiran
           </a>
           <a
             href="#tentang"
-            className="w-full sm:w-auto px-10 py-5 border-2 border-accent/50 text-accent font-bold rounded-full hover:bg-accent/10 transition-all text-lg"
+            className="w-full sm:w-auto px-8 py-3 md:px-10 md:py-5 border-2 border-accent/50 text-accent font-bold rounded-full hover:bg-accent/10 transition-all text-base md:text-lg"
           >
             Lihat Detail Acara
           </a>

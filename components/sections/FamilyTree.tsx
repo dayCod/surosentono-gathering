@@ -39,11 +39,11 @@ export default function FamilyTree() {
               </div>
 
               {/* Members */}
-              <div className="flex flex-wrap justify-center gap-8 md:gap-12">
+              <div className="flex flex-wrap justify-center gap-4 md:gap-12">
                 {members.map((member) => (
                   <div key={member.id} className="text-center group">
                     {/* Foto */}
-                    <div className="w-20 h-20 md:w-24 md:h-24 rounded-full overflow-hidden mx-auto mb-3 border-2 border-accent shadow-lg shadow-accent/10 group-hover:scale-110 transition-transform">
+                    <div className="w-14 h-14 md:w-24 md:h-24 rounded-full overflow-hidden mx-auto mb-3 border-2 border-accent shadow-lg shadow-accent/10 group-hover:scale-110 transition-transform">
                       {member.foto ? (
                         <img
                           src={member.foto}
@@ -51,17 +51,17 @@ export default function FamilyTree() {
                           className="w-full h-full object-cover"
                         />
                       ) : (
-                        <div className="w-full h-full bg-purple-900/50 flex items-center justify-center text-accent font-bold text-xl backdrop-blur-sm">
+                        <div className="w-full h-full bg-purple-900/50 flex items-center justify-center text-accent font-bold text-lg md:text-xl backdrop-blur-sm">
                           {member.nama.charAt(0)}
                         </div>
                       )}
                     </div>
                     {/* Nama */}
-                    <p className="text-white text-base md:text-lg font-bold tracking-tight">
+                    <p className="text-white text-sm md:text-lg font-bold tracking-tight">
                       {member.nama}
                     </p>
                     {member.pasangan && (
-                      <p className="text-foreground-muted text-xs md:text-sm font-medium italic mt-0.5">
+                      <p className="text-foreground-muted text-[10px] md:text-sm font-medium italic mt-0.5">
                         & {member.pasangan}
                       </p>
                     )}

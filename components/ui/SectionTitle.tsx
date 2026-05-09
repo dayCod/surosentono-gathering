@@ -20,13 +20,13 @@ export default function SectionTitle({
       className={cn("mb-12", align === "center" ? "text-center" : "text-left")}
     >
       {subtitle && (
-        <p className="font-accent text-lg md:text-xl mb-2 text-accent">
+        <span className="text-accent font-bold text-xs md:text-sm uppercase tracking-widest mb-2 block">
           {subtitle}
-        </p>
+        </span>
       )}
       <h2
         className={cn(
-          "font-heading text-3xl md:text-4xl lg:text-5xl font-bold mb-4 text-white"
+          "font-heading text-2xl md:text-4xl lg:text-5xl font-bold mb-4 text-white"
         )}
       >
         {title}
@@ -34,7 +34,7 @@ export default function SectionTitle({
       {description && (
         <p
           className={cn(
-            "text-lg max-w-2xl",
+            "text-base md:text-lg max-w-2xl",
             align === "center" && "mx-auto",
             "text-foreground-secondary"
           )}

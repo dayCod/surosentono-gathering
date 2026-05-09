@@ -68,13 +68,13 @@ export default function GalleryPreview() {
 
         {/* CTA */}
         <ScrollReveal delay={0.3}>
-          <div className="text-center mt-12">
+          <div className="text-center mt-10 md:mt-12">
             <Link
               href="/galeri"
-              className="inline-flex items-center gap-2 px-10 py-4 bg-accent text-primary-dark rounded-full hover:bg-accent-hover hover:scale-105 transition-all font-bold text-lg shadow-xl shadow-accent/20"
+              className="inline-flex items-center gap-2 px-6 py-3 md:px-10 md:py-4 bg-accent text-primary-dark rounded-full hover:bg-accent-hover hover:scale-105 transition-all font-bold text-base md:text-lg shadow-xl shadow-accent/20"
             >
               Lihat Semua Foto
-              <ArrowRight size={20} />
+              <ArrowRight size={20} className="w-5 h-5 md:w-6 md:h-6" />
             </Link>
           </div>
         </ScrollReveal>
