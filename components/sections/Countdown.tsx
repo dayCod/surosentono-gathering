@@ -87,16 +87,20 @@ export default function Countdown() {
   ];
 
   return (
-    <section className="py-16 md:py-20 bg-primary-dark">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+    <section className="py-16 md:py-20 bg-background-alt relative overflow-hidden">
+      {/* Decorative blobs */}
+      <div className="absolute top-0 left-0 w-64 h-64 bg-primary/20 blur-[100px] rounded-full -translate-x-1/2 -translate-y-1/2" />
+      <div className="absolute bottom-0 right-0 w-64 h-64 bg-accent/10 blur-[100px] rounded-full translate-x-1/2 translate-y-1/2" />
+
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <p className="font-accent text-accent text-xl mb-2">Hitung Mundur</p>
-          <h2 className="font-heading text-3xl md:text-4xl text-white font-bold mb-10">
+          <p className="font-accent text-accent text-xl mb-2 italic">Hitung Mundur</p>
+          <h2 className="font-heading text-3xl md:text-5xl text-white font-bold mb-10 tracking-tight">
             Menuju Hari Berkumpul
           </h2>
         </motion.div>
@@ -111,12 +115,12 @@ export default function Countdown() {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
             >
-              <div className="bg-white/10 backdrop-blur rounded-xl p-4 md:p-6 min-w-[70px] md:min-w-[100px]">
-                <span className="text-3xl md:text-5xl font-bold text-white font-heading">
+              <div className="bg-purple-800/20 backdrop-blur-md border border-white/5 rounded-2xl p-4 md:p-6 min-w-[80px] md:min-w-[120px] shadow-xl shadow-black/20">
+                <span className="text-4xl md:text-6xl font-black text-accent font-heading leading-none">
                   {String(unit.value).padStart(2, "0")}
                 </span>
               </div>
-              <p className="text-white/60 text-sm md:text-base mt-2">
+              <p className="text-foreground-muted text-sm md:text-base mt-3 font-medium uppercase tracking-wider">
                 {unit.label}
               </p>
             </motion.div>

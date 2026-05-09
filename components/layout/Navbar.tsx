@@ -30,7 +30,7 @@ export default function Navbar() {
       className={cn(
         "fixed top-0 left-0 right-0 z-40 transition-all duration-300",
         isScrolled
-          ? "bg-background/95 backdrop-blur-md shadow-md"
+          ? "bg-[#0F0A1A]/90 backdrop-blur-xl shadow-lg border-b border-white/5"
           : "bg-transparent"
       )}
     >
@@ -43,7 +43,7 @@ export default function Navbar() {
               e.preventDefault();
               handleNavClick("#beranda");
             }}
-            className="font-heading text-lg md:text-xl font-bold text-primary truncate"
+            className="font-heading text-lg md:text-xl font-bold text-white truncate"
           >
             {SITE_CONFIG.name}
           </a>
@@ -58,7 +58,7 @@ export default function Navbar() {
                     e.preventDefault();
                     handleNavClick(link.href);
                   }}
-                  className="px-3 py-2 rounded-lg text-base font-medium text-primary hover:text-primary-light hover:bg-accent/20 transition-colors"
+                  className="px-3 py-2 rounded-lg text-base font-medium text-foreground-secondary hover:text-accent hover:bg-white/5 transition-colors"
                 >
                   {link.label}
                 </a>
@@ -69,7 +69,7 @@ export default function Navbar() {
           {/* Mobile Hamburger Button */}
           <button
             type="button"
-            className="md:hidden p-2 rounded-lg text-primary-dark hover:bg-accent/20 transition-colors"
+            className="md:hidden p-2 rounded-lg text-white hover:bg-white/10 transition-colors"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             aria-label={isMobileMenuOpen ? "Tutup menu" : "Buka menu"}
             aria-expanded={isMobileMenuOpen}
@@ -82,10 +82,10 @@ export default function Navbar() {
         <div
           className={cn(
             "md:hidden overflow-hidden transition-all duration-300 ease-in-out",
-            isMobileMenuOpen ? "max-h-96 opacity-100 bg-background/95 backdrop-blur-md" : "max-h-0 opacity-0 bg-background/95 backdrop-blur-md"
+            isMobileMenuOpen ? "max-h-96 opacity-100 bg-[#1A1130]/95 backdrop-blur-xl border-t border-white/5" : "max-h-0 opacity-0"
           )}
         >
-          <ul className="pb-4 space-y-1">
+          <ul className="py-4 space-y-1">
             {NAV_LINKS.map((link) => (
               <li key={link.href}>
                 <a
@@ -94,7 +94,7 @@ export default function Navbar() {
                     e.preventDefault();
                     handleNavClick(link.href);
                   }}
-                  className="block px-4 py-3 rounded-lg text-base font-medium text-primary-light hover:text-primary hover:bg-accent/20 transition-colors"
+                  className="block px-4 py-3 rounded-lg text-base font-medium text-foreground-secondary hover:text-accent hover:bg-white/5 transition-colors"
                 >
                   {link.label}
                 </a>

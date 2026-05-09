@@ -5,9 +5,9 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-primary-dark text-white">
+    <footer className="bg-[#080510] text-white">
       {/* Ornamen divider */}
-      <div className="w-full h-1 bg-gradient-to-r from-accent/0 via-accent to-accent/0" />
+      <div className="w-full h-px bg-gradient-to-r from-accent/0 via-accent to-accent/0" />
 
       {/* Content */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">
@@ -17,9 +17,9 @@ export default function Footer() {
             <h3 className="font-heading text-xl md:text-2xl font-bold text-accent mb-3">
               {SITE_CONFIG.name}
             </h3>
-            <p className="text-sm md:text-base text-white/80 leading-relaxed">
-              {SITE_CONFIG.tagline}. Acara gathering tahunan keluarga besar
-              Surosentono untuk mempererat tali silaturahmi antar generasi.
+            <p className="text-sm md:text-base text-foreground-secondary leading-relaxed">
+              {SITE_CONFIG.tagline}. Halal Bi Halal Keluarga Besar
+              Suro Sentono untuk mempererat tali silaturahmi antar generasi.
             </p>
           </div>
 
@@ -33,7 +33,7 @@ export default function Footer() {
                 <li key={link.href}>
                   <a
                     href={link.href}
-                    className="text-sm md:text-base text-white/80 hover:text-accent transition-colors"
+                    className="text-sm md:text-base text-foreground-secondary hover:text-accent transition-colors"
                   >
                     {link.label}
                   </a>
@@ -53,14 +53,14 @@ export default function Footer() {
                   href={`https://wa.me/${SITE_CONFIG.whatsappNumber}`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-3 text-sm md:text-base text-white/80 hover:text-accent transition-colors"
+                  className="flex items-center gap-3 text-sm md:text-base text-foreground-secondary hover:text-accent transition-colors"
                 >
                   <Phone size={18} className="shrink-0" />
                   <span>WhatsApp Panitia</span>
                 </a>
               </li>
               <li>
-                <div className="flex items-center gap-3 text-sm md:text-base text-white/80">
+                <div className="flex items-center gap-3 text-sm md:text-base text-foreground-secondary">
                   <MapPin size={18} className="shrink-0" />
                   <span>Bogor, Jawa Barat</span>
                 </div>
@@ -71,10 +71,10 @@ export default function Footer() {
       </div>
 
       {/* Copyright */}
-      <div className="border-t border-white/10">
+      <div className="border-t border-white/5">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
-          <p className="text-center text-sm text-white/60 flex items-center justify-center gap-1 flex-wrap">
-            <span>&copy; {currentYear} Keluarga Besar Surosentono.</span>
+          <p className="text-center text-sm text-foreground-muted flex items-center justify-center gap-1 flex-wrap">
+            <span>&copy; {currentYear} Keluarga Besar Suro Sentono.</span>
             <span className="flex items-center gap-1">
               Dibuat dengan <Heart size={14} className="text-accent" /> untuk
               keluarga.

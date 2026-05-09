@@ -26,8 +26,7 @@ export default function SectionTitle({
       )}
       <h2
         className={cn(
-          "font-heading text-3xl md:text-4xl lg:text-5xl font-bold mb-4",
-          light ? "text-white" : "text-primary-dark"
+          "font-heading text-3xl md:text-4xl lg:text-5xl font-bold mb-4 text-white"
         )}
       >
         {title}
@@ -37,7 +36,7 @@ export default function SectionTitle({
           className={cn(
             "text-lg max-w-2xl",
             align === "center" && "mx-auto",
-            light ? "text-white/80" : "text-primary/70"
+            "text-foreground-secondary"
           )}
         >
           {description}

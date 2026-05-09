@@ -32,34 +32,34 @@ export default function GalleryPreview() {
   };
 
   return (
-    <section id="galeri" className="py-20 md:py-28 bg-white">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="galeri" className="py-20 md:py-28 bg-background-alt relative overflow-hidden">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <ScrollReveal>
           <SectionTitle
             subtitle="Momen Berharga"
             title="Galeri"
-            description="Kumpulan momen indah keluarga besar Surosentono"
+            description="Kumpulan momen indah keluarga besar Suro Sentono"
           />
         </ScrollReveal>
 
         {/* Photo Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 md:gap-4">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 md:gap-6">
           {displayPhotos.map((photo, index) => (
             <ScrollReveal key={photo.id} delay={index * 0.05}>
               <button
                 onClick={() => openLightbox(index)}
-                className="relative group aspect-square rounded-xl overflow-hidden cursor-pointer w-full"
+                className="relative group aspect-square rounded-2xl overflow-hidden cursor-pointer w-full border border-white/5 shadow-lg"
               >
                 <img
                   src={photo.src}
                   alt={photo.alt}
-                  className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                 />
                 {/* Hover Overlay */}
-                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-colors flex items-center justify-center">
-                  <span className="text-white opacity-0 group-hover:opacity-100 transition-opacity text-sm font-medium">
-                    Lihat Foto
-                  </span>
+                <div className="absolute inset-0 bg-purple-900/0 group-hover:bg-purple-900/60 transition-all duration-300 flex items-center justify-center backdrop-blur-[2px] opacity-0 group-hover:opacity-100">
+                  <div className="p-3 bg-accent text-primary-dark rounded-full scale-50 group-hover:scale-100 transition-transform duration-300">
+                    <ArrowRight size={24} />
+                  </div>
                 </div>
               </button>
             </ScrollReveal>
@@ -68,13 +68,13 @@ export default function GalleryPreview() {
 
         {/* CTA */}
         <ScrollReveal delay={0.3}>
-          <div className="text-center mt-10">
+          <div className="text-center mt-12">
             <Link
               href="/galeri"
-              className="inline-flex items-center gap-2 px-8 py-4 bg-primary text-white rounded-full hover:bg-primary-dark transition-colors font-semibold text-lg"
+              className="inline-flex items-center gap-2 px-10 py-4 bg-accent text-primary-dark rounded-full hover:bg-accent-hover hover:scale-105 transition-all font-bold text-lg shadow-xl shadow-accent/20"
             >
               Lihat Semua Foto
-              <ArrowRight size={18} />
+              <ArrowRight size={20} />
             </Link>
           </div>
         </ScrollReveal>
