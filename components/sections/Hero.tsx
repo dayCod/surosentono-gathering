@@ -15,7 +15,7 @@ export default function Hero() {
       {/* Background Image + Overlay */}
       <div className="absolute inset-0">
         <img
-          src="https://github.com/TopG-0099/surosentono-assets/blob/1bb58a961bca1845bbdff382cbe09d6c0f4192ff/banner-landing-page.jpg?raw=true"
+          src="/images/branding/perembahan.jpg"
           alt=""
           className="w-full h-full object-cover"
         />
@@ -34,7 +34,7 @@ export default function Hero() {
           <img
             src="/images/branding/moto.png"
             alt="Jejak Warisan Mbah Suro Sentono"
-            className="w-[300px] mb-15 sm:w-[360px] md:w-[450px] lg:w-[530px] xl:w-[620px] h-auto"
+            className="w-[300px] mb-15 sm:w-[360px] md:w-[450px] lg:w-[530px] xl:w-[650px] h-auto"
           />
         </motion.div>
 
