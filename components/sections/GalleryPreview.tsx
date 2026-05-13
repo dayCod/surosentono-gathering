@@ -63,7 +63,7 @@ export default function GalleryPreview() {
           <SectionTitle
             subtitle="Momen Berharga"
             title="Galeri"
-            description="Kumpulan momen indah keluarga besar Suro Sentono"
+            description="Kumpulan momen indah keluarga besar Surosentono"
           />
         </ScrollReveal>
 

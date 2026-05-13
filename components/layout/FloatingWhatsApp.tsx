@@ -1,13 +1,17 @@
 "use client";
 
+import { usePathname } from "next/navigation";
 import { MessageCircle } from "lucide-react";
 import { SITE_CONFIG } from "@/lib/constants";
 
 export default function FloatingWhatsApp() {
+  const pathname = usePathname();
   const message = encodeURIComponent(
     "Halo, saya ingin bertanya tentang Halal Bi Halal Suro Sentono 2027"
   );
   const waLink = `https://wa.me/${SITE_CONFIG.whatsappNumber}?text=${message}`;
+
+  if (pathname?.startsWith("/dashboard")) return null;
 
   return (
     <a

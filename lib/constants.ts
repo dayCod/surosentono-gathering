@@ -9,7 +9,8 @@ export const SITE_CONFIG = {
 export const NAV_LINKS = [
   { label: "Beranda", href: "#beranda" },
   { label: "Tentang", href: "#tentang" },
-  { label: "Jadwal", href: "#jadwal" },
+  { label: "Kegiatan", href: "#kegiatan" },
   { label: "Lokasi", href: "#lokasi" },
+  { label: "Silsilah", href: "#silsilah" },
   { label: "Galeri", href: "#galeri" },
 ];

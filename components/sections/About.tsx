@@ -59,7 +59,7 @@ export default function About() {
             <div className="relative">
               <div className="rounded-2xl overflow-hidden shadow-2xl shadow-purple-900/20">
                 <img
-                  src="/images/gallery/placeholder-1.svg"
+                  src="/images/gallery/aboutus.jpg"
                   alt="Keluarga Surosentono"
                   className="w-full h-[400px] md:h-[500px] object-cover hover:scale-110 transition-transform duration-700"
                 />

@@ -32,6 +32,51 @@
   --font-heading: var(--font-outfit), sans-serif;
   --font-body: var(--font-inter), sans-serif;
   --font-accent: var(--font-playfair), serif;
+
+}
+
+@layer utilities {
+  .animate-tree-line-h {
+    background: linear-gradient(90deg,
+        oklch(89.7% 0.196 126.665 / 0.3) 0%,
+        oklch(89.7% 0.196 126.665 / 0.3) 40%,
+        oklch(89.7% 0.196 126.665 / 0.9) 50%,
+        oklch(89.7% 0.196 126.665 / 0.3) 60%,
+        oklch(89.7% 0.196 126.665 / 0.3) 100%);
+    background-size: 200% 100%;
+    animation: shimmer-h 4s linear infinite;
+  }
+
+  .animate-tree-line-v {
+    background: linear-gradient(180deg,
+        oklch(89.7% 0.196 126.665 / 0.3) 0%,
+        oklch(89.7% 0.196 126.665 / 0.3) 40%,
+        oklch(89.7% 0.196 126.665 / 0.9) 50%,
+        oklch(89.7% 0.196 126.665 / 0.3) 60%,
+        oklch(89.7% 0.196 126.665 / 0.3) 100%);
+    background-size: 100% 200%;
+    animation: shimmer-v 4s linear infinite;
+  }
+}
+
+@keyframes shimmer-h {
+  0% {
+    background-position: 100% 0;
+  }
+
+  100% {
+    background-position: -100% 0;
+  }
+}
+
+@keyframes shimmer-v {
+  0% {
+    background-position: 0 100%;
+  }
+
+  100% {
+    background-position: 0 -100%;
+  }
 }
 
 @layer base {

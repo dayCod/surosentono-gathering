@@ -27,7 +27,7 @@ const iconMap: Record<
 
 export default function Rundown() {
   return (
-    <section id="jadwal" className="py-20 md:py-28 bg-background relative overflow-hidden">
+    <section id="kegiatan" className="py-20 md:py-28 bg-background relative overflow-hidden">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <ScrollReveal>
           <SectionTitle
@@ -55,9 +55,8 @@ export default function Rundown() {
                   direction={isEven ? "left" : "right"}
                 >
                   <div
-                    className={`relative flex items-start gap-4 md:gap-8 ${
-                      isEven ? "md:flex-row" : "md:flex-row-reverse"
-                    }`}
+                    className={`relative flex items-start gap-4 md:gap-8 ${isEven ? "md:flex-row" : "md:flex-row-reverse"
+                      }`}
                   >
                     {/* Dot on timeline */}
                     <div className="absolute left-4 md:left-1/2 w-3 h-3 bg-accent rounded-full shadow-[0_0_15px_rgba(190,242,100,0.6)] -translate-x-1/2 z-10 mt-7" />
