@@ -28,7 +28,7 @@ const MOCK_DATA: Pendaftar[] = [
   { no: 10, timestamp: "2026-05-10 09:10", nama: "Lestari Ningrum", kontak: "081123456789", jumlahOrang: 2, kota: "Malang", status: "Hadir", kontribusi: 100000 },
 ];
 
-const PASSWORD = "surosentono2027event";
+const PASSWORD = process.env.NEXT_PUBLIC_DASHBOARD_AUTH_PASSWORD || "surosentono2027event";
 
 // ── Helpers ──────────────────────────────────────────────────────────────────
 function formatRupiah(n: number) {
