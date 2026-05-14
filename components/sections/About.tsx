@@ -10,8 +10,8 @@ export default function About() {
   ];
 
   return (
-    <section id="tentang" className="py-20 md:py-28 bg-background">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="tentang" className="py-20 md:py-28 bg-background relative overflow-hidden">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid md:grid-cols-2 gap-12 items-center">
           {/* Kolom Kiri: Teks */}
           <ScrollReveal direction="left">
@@ -20,9 +20,9 @@ export default function About() {
               title="Tentang Acara"
               align="left"
             />
-            <div className="space-y-4 text-primary/80 text-lg leading-relaxed">
+            <div className="space-y-4 text-foreground-secondary text-lg leading-relaxed">
               <p>
-                Gathering Keluarga Surosentono adalah momen istimewa untuk
+                Halal Bi Halal Suro Sentono adalah momen istimewa untuk
                 mempertemukan kembali saudara-saudara yang mungkin sudah lama
                 tidak berjumpa.
               </p>
@@ -33,7 +33,7 @@ export default function About() {
               </p>
               <p>
                 Mari bersama-sama menjaga tali silaturahmi yang telah diwariskan
-                oleh para pendahulu kita.
+                oleh para pendahulu kita dalam bingkai &ldquo;Jejak Warisan&rdquo;.
               </p>
             </div>
 
@@ -42,13 +42,13 @@ export default function About() {
               {highlights.map((item) => (
                 <div
                   key={item.label}
-                  className="text-center p-4 bg-white rounded-xl shadow-sm"
+                  className="text-center p-4 bg-background-card/50 backdrop-blur-sm border border-white/5 rounded-xl shadow-lg shadow-black/20 hover:scale-105 transition-transform"
                 >
                   <item.icon className="mx-auto mb-2 text-accent" size={24} />
-                  <p className="text-2xl font-bold text-primary-dark">
+                  <p className="text-2xl font-bold text-white">
                     {item.value}
                   </p>
-                  <p className="text-sm text-primary/60">{item.label}</p>
+                  <p className="text-sm text-foreground-muted">{item.label}</p>
                 </div>
               ))}
             </div>
@@ -57,13 +57,15 @@ export default function About() {
           {/* Kolom Kanan: Gambar */}
           <ScrollReveal direction="right" delay={0.2}>
             <div className="relative">
-              <img
-                src="/images/gallery/placeholder-1.svg"
-                alt="Keluarga Surosentono"
-                className="rounded-2xl shadow-xl w-full h-[400px] md:h-[500px] object-cover"
-              />
+              <div className="rounded-2xl overflow-hidden shadow-2xl shadow-purple-900/20">
+                <img
+                  src="/images/gallery/aboutus.jpg"
+                  alt="Keluarga Surosentono"
+                  className="w-full h-[400px] md:h-[500px] object-cover hover:scale-110 transition-transform duration-700"
+                />
+              </div>
               {/* Decorative element */}
-              <div className="absolute -bottom-4 -right-4 w-full h-full border-2 border-accent rounded-2xl -z-10" />
+              <div className="absolute -bottom-4 -right-4 w-full h-full border-2 border-accent/30 rounded-2xl -z-10" />
             </div>
           </ScrollReveal>
         </div>

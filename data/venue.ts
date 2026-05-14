@@ -1,6 +1,8 @@
 export interface VenueImage {
   src: string;
   alt: string;
+  title: string;
+  subtitle?: string;
 }
 
 export const venueData = {
@@ -28,13 +30,48 @@ export const venueData = {
     "Venue berada di sebelah kanan jalan",
   ],
   images: [
-    { src: "https://github.com/TopG-0099/surosentono-assets/blob/b2159161e15394ade6d2a12f187dc37eac7a674b/halaman-parkir.jpg?raw=true", alt: "Halaman Parkir" },
-    { src: "https://github.com/TopG-0099/surosentono-assets/blob/b2159161e15394ade6d2a12f187dc37eac7a674b/aula-utama.jpg?raw=true", alt: "Aula Utama" },
-    { src: "https://github.com/TopG-0099/surosentono-assets/blob/b2159161e15394ade6d2a12f187dc37eac7a674b/kamar-tidur.jpg?raw=true", alt: "Kamar Tidur" },
-    { src: "https://github.com/TopG-0099/surosentono-assets/blob/b2159161e15394ade6d2a12f187dc37eac7a674b/musholla.jpg?raw=true", alt: "Musholla" },
-    { src: "https://github.com/TopG-0099/surosentono-assets/blob/b2159161e15394ade6d2a12f187dc37eac7a674b/ruang-makan.jpg?raw=true", alt: "Ruang Makan" },
-    { src: "https://github.com/TopG-0099/surosentono-assets/blob/b2159161e15394ade6d2a12f187dc37eac7a674b/tempat-gym.jpg?raw=true", alt: "Tempat Gym" },
-    { src: "https://github.com/TopG-0099/surosentono-assets/blob/b2159161e15394ade6d2a12f187dc37eac7a674b/ruang-karaoke.jpg?raw=true", alt: "Ruang Karaoke" },
+    {
+      src: "https://github.com/TopG-0099/surosentono-assets/blob/master/halaman-parkir.jpg?raw=true",
+      alt: "Halaman Parkir",
+      title: "HALAMAN PARKIR",
+      subtitle: "Kapasitas +80 Mobil"
+    },
+    {
+      src: "https://github.com/TopG-0099/surosentono-assets/blob/master/aula-utama.jpg?raw=true",
+      alt: "Aula Utama",
+      title: "AULA UTAMA",
+      subtitle: "Kapasitas 200 Orang"
+    },
+    {
+      src: "https://github.com/TopG-0099/surosentono-assets/blob/master/kamar-tidur.jpg?raw=true",
+      alt: "Kamar Tidur",
+      title: "KAMAR TIDUR",
+      subtitle: "Twin Bed - Kapasitas 2 Orang"
+    },
+    {
+      src: "https://github.com/TopG-0099/surosentono-assets/blob/master/musholla.jpg?raw=true",
+      alt: "Musholla",
+      title: "MUSHOLLA",
+      subtitle: "Tempat Ibadah yang Luas & Bersih"
+    },
+    {
+      src: "https://github.com/TopG-0099/surosentono-assets/blob/master/ruang-makan.jpg?raw=true",
+      alt: "Ruang Makan",
+      title: "RUANG MAKAN",
+      subtitle: "Kapasitas 200 Orang"
+    },
+    {
+      src: "https://github.com/TopG-0099/surosentono-assets/blob/master/tempat-gym.jpg?raw=true",
+      alt: "Tempat Gym",
+      title: "TEMPAT GYM",
+      subtitle: "Fasilitas Kebugaran untuk Peserta"
+    },
+    {
+      src: "https://github.com/TopG-0099/surosentono-assets/blob/master/ruang-karaoke.jpg?raw=true",
+      alt: "Ruang Karaoke",
+      title: "RUANG KARAOKE",
+      subtitle: "Ruang Hiburan & Karaoke Keluarga"
+    },
   ] as VenueImage[],
   videoUrl: "", // YouTube embed URL jika ada video venue
   dressCode: "Menyesuaikan - Nuansa Coklat",

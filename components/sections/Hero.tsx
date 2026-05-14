@@ -15,44 +15,40 @@ export default function Hero() {
       {/* Background Image + Overlay */}
       <div className="absolute inset-0">
         <img
-          src="https://github.com/TopG-0099/surosentono-assets/blob/1bb58a961bca1845bbdff382cbe09d6c0f4192ff/banner-landing-page.jpg?raw=true"
+          src="/images/branding/perembahan.jpg"
           alt=""
           className="w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/70" />
+        <div className="absolute inset-0 bg-gradient-to-b from-purple-900/80 via-purple-800/60 to-background" />
       </div>
 
       {/* Content */}
-      <div className="relative z-10 text-center text-white px-4 max-w-4xl mx-auto">
-        {/* Subtitle */}
+      <div className="relative z-10 text-center text-white px-4 max-w-5xl mx-auto">
+        {/* Branding Image — menggantikan subtitle, tagline, dan main title */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
+          transition={{ duration: 0.8, delay: 0.3 }}
+          className="mb-[-10px] md:mb-[-20px] flex justify-center"
         >
-          <p className="text-accent font-accent text-xl md:text-2xl mb-4">
-            Undangan Gathering
-          </p>
+          <img
+            src="/images/branding/moto.png"
+            alt="Jejak Warisan Mbah Suro Sentono"
+            className="w-[300px] mb-15 sm:w-[360px] md:w-[450px] lg:w-[530px] xl:w-[650px] h-auto"
+          />
         </motion.div>
 
-        {/* Title */}
-        <motion.h1
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.4 }}
-          className="font-heading text-4xl md:text-6xl lg:text-7xl font-bold mb-4"
-        >
-          Jejak Keluarga Warisan Kebersamaan
-        </motion.h1>
-
-        {/* Tagline */}
         <motion.p
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.6 }}
-          className="text-lg md:text-xl text-white/80 mb-8"
+          className="mb-[-10px] md:mb-[-20px] flex justify-center"
         >
-          {eventData.tagline}
+          <img
+            src="/images/branding/organized-by.png"
+            alt="Jejak Warisan Mbah Suro Sentono"
+            className="w-[175px] md:w-[250px] mb-15 h-auto"
+          />
         </motion.p>
 
         {/* Info tanggal & lokasi */}
@@ -60,16 +56,16 @@ export default function Hero() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.8 }}
-          className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-10 text-white/90"
+          className="flex flex-col sm:flex-row items-center justify-center gap-4 md:gap-6 mb-10 md:mb-12 text-white/90 font-medium text-sm md:text-base"
         >
           <span className="flex items-center gap-2">
-            <Calendar size={18} />
-            <span>{formatDate(eventData.tanggal)}</span>
+            <Calendar size={18} className="text-accent md:w-5 md:h-5" />
+            <span>27-28 MARET 2027</span>
           </span>
-          <span className="hidden sm:block">|</span>
+          <span className="hidden sm:block text-white/30">|</span>
           <span className="flex items-center gap-2">
-            <MapPin size={18} />
-            <span>Bogor, Jawa Barat</span>
+            <MapPin size={18} className="text-accent md:w-5 md:h-5" />
+            <span>Bina Karakter Hall</span>
           </span>
         </motion.div>
 
@@ -78,21 +74,21 @@ export default function Hero() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 1.0 }}
-          className="flex flex-col sm:flex-row items-center justify-center gap-4"
+          className="flex flex-col sm:flex-row items-center justify-center gap-4 px-6 sm:px-0"
         >
           <a
             href={SITE_CONFIG.googleFormUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="px-8 py-4 bg-accent text-primary-dark font-semibold rounded-full hover:bg-accent/90 transition-colors text-lg"
+            className="w-full sm:w-auto px-8 py-3 md:px-10 md:py-5 bg-accent text-primary-dark font-black rounded-full hover:bg-accent-hover hover:scale-105 transition-all text-base md:text-lg shadow-xl shadow-accent/20"
           >
             Konfirmasi Kehadiran
           </a>
           <a
             href="#tentang"
-            className="px-8 py-4 border-2 border-white text-white font-semibold rounded-full hover:bg-white/10 transition-colors text-lg"
+            className="w-full sm:w-auto px-8 py-3 md:px-10 md:py-5 border-2 border-accent/50 text-accent font-bold rounded-full hover:bg-accent/10 transition-all text-base md:text-lg"
           >
-            Lihat Detail
+            Lihat Detail Acara
           </a>
         </motion.div>
       </div>

@@ -1,13 +1,14 @@
 import type { Metadata } from "next";
-import { Playfair_Display, Inter, Dancing_Script } from "next/font/google";
+import { Outfit, Inter, Playfair_Display } from "next/font/google";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import FloatingWhatsApp from "@/components/layout/FloatingWhatsApp";
 import "./globals.css";
 
-const playfair = Playfair_Display({
+const outfit = Outfit({
   subsets: ["latin"],
-  variable: "--font-playfair",
+  variable: "--font-outfit",
+  weight: ["300", "400", "500", "600", "700", "800", "900"],
 });
 
 const inter = Inter({
@@ -15,29 +16,30 @@ const inter = Inter({
   variable: "--font-inter",
 });
 
-const dancing = Dancing_Script({
+const playfair = Playfair_Display({
   subsets: ["latin"],
-  variable: "--font-dancing",
+  variable: "--font-playfair",
+  style: ["normal", "italic"],
 });
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://surosentono-gathering.vercel.app"),
-  title: "Gathering Keluarga Surosentono 2025 - Mempererat Silaturahmi",
+  title: "Halal Bi Halal — Jejak Warisan Suro Sentono 2027",
   description:
-    "Undangan Gathering Keluarga Besar Surosentono 2025 di Bogor. Mari berkumpul mempererat tali silaturahmi antar generasi.",
-  keywords: ["gathering", "keluarga", "surosentono", "silaturahmi", "bogor"],
+    "Halal Bi Halal Keluarga Besar Suro Sentono, 27-28 Maret 2027 di Bina Karakter Hall. Organized by the Prakoso.",
+  keywords: ["gathering", "keluarga", "surosentono", "silaturahmi", "bogor", "halal bi halal"],
   authors: [{ name: "Keluarga Surosentono" }],
   openGraph: {
-    title: "Gathering Keluarga Surosentono 2025",
-    description: "Mempererat Tali Silaturahmi Keluarga Besar",
+    title: "Halal Bi Halal — Jejak Warisan Suro Sentono 2027",
+    description: "Jejak Warisan Keluarga Besar Suro Sentono",
     url: "https://surosentono-gathering.vercel.app",
-    siteName: "Gathering Keluarga Surosentono",
+    siteName: "Halal Bi Halal Suro Sentono",
     images: [
       {
         url: "/images/og-cover.svg",
         width: 1200,
         height: 630,
-        alt: "Gathering Keluarga Surosentono 2025",
+        alt: "Halal Bi Halal Suro Sentono 2027",
       },
     ],
     locale: "id_ID",
@@ -45,8 +47,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Gathering Keluarga Surosentono 2025",
-    description: "Mempererat Tali Silaturahmi Keluarga Besar",
+    title: "Halal Bi Halal — Jejak Warisan Suro Sentono 2027",
+    description: "Jejak Warisan Keluarga Besar Suro Sentono",
     images: ["/images/og-cover.svg"],
   },
   icons: {
@@ -63,7 +65,7 @@ export default function RootLayout({
   return (
     <html
       lang="id"
-      className={`${playfair.variable} ${inter.variable} ${dancing.variable} h-full antialiased`}
+      className={`${outfit.variable} ${inter.variable} ${playfair.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col font-body">
         <Navbar />

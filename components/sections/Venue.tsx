@@ -47,8 +47,8 @@ export default function Venue() {
   };
 
   return (
-    <section id="lokasi" className="py-20 md:py-28 bg-background">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="lokasi" className="py-20 md:py-28 bg-background relative overflow-hidden">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <ScrollReveal>
           <SectionTitle
             subtitle="Lokasi Acara"
@@ -61,7 +61,7 @@ export default function Venue() {
         <div className="grid md:grid-cols-2 gap-8 mb-12">
           {/* Google Maps Embed */}
           <ScrollReveal direction="left">
-            <div className="rounded-xl overflow-hidden shadow-md h-[300px] md:h-[400px]">
+            <div className="rounded-2xl overflow-hidden shadow-2xl shadow-black/40 h-[300px] md:h-[400px] border border-white/5">
               <iframe
                 src={venueData.mapsEmbed}
                 width="100%"
@@ -79,11 +79,11 @@ export default function Venue() {
           <ScrollReveal direction="right" delay={0.2}>
             <div className="space-y-6">
               <div>
-                <h3 className="text-2xl font-heading font-bold text-primary-dark mb-2">
+                <h3 className="text-xl md:text-3xl font-heading font-bold text-white mb-3 tracking-tight">
                   {venueData.nama}
                 </h3>
-                <p className="text-primary/70 flex items-start gap-2">
-                  <MapPin size={18} className="mt-1 shrink-0" />
+                <p className="text-foreground-secondary flex items-start gap-3 leading-relaxed text-sm md:text-base">
+                  <MapPin size={18} className="mt-1 shrink-0 text-accent md:w-5 md:h-5" />
                   {venueData.alamat}
                 </p>
               </div>
@@ -93,23 +93,23 @@ export default function Venue() {
                 href={venueData.mapsLink}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-6 py-3 bg-primary text-white rounded-full hover:bg-primary-dark transition-colors font-semibold"
+                className="inline-flex items-center gap-2 px-6 py-3 md:px-8 md:py-4 bg-accent text-primary-dark rounded-full hover:bg-accent-hover hover:scale-105 transition-all font-bold shadow-xl shadow-accent/20 text-sm md:text-base"
               >
-                <MapPin size={18} />
+                <MapPin size={18} className="md:w-5 md:h-5" />
                 Buka di Google Maps
-                <ExternalLink size={14} />
+                <ExternalLink size={14} className="md:w-4 md:h-4" />
               </a>
 
               {/* Fasilitas */}
               <div>
-                <h4 className="font-semibold text-primary-dark mb-2 flex items-center gap-2">
-                  <Car size={18} /> Fasilitas yang didapatkan
+                <h4 className="font-bold text-white mb-3 flex items-center gap-2 text-sm md:text-base">
+                  <Car size={18} className="text-accent md:w-5 md:h-5" /> Fasilitas yang didapatkan
                 </h4>
                 <div className="flex flex-wrap gap-2">
                   {venueData.fasilitas.map((item) => (
                     <span
                       key={item}
-                      className="px-3 py-1 bg-accent/10 text-primary rounded-full text-sm"
+                      className="px-3 py-1 md:px-4 md:py-1.5 bg-accent/10 text-accent border border-accent/20 rounded-full text-xs md:text-sm font-medium"
                     >
                       {item}
                     </span>
@@ -118,11 +118,11 @@ export default function Venue() {
               </div>
 
               {/* Dress Code */}
-              <div>
-                <h4 className="font-semibold text-primary-dark mb-2 flex items-center gap-2">
-                  <Shirt size={18} /> Dress Code
+              <div className="p-4 md:p-6 bg-background-card/50 backdrop-blur-sm border border-white/5 rounded-xl">
+                <h4 className="font-bold text-white mb-2 flex items-center gap-2 text-sm md:text-base">
+                  <Shirt size={18} className="text-accent md:w-5 md:h-5" /> Dress Code
                 </h4>
-                <p className="text-primary/70">{venueData.dressCode}</p>
+                <p className="text-foreground-secondary text-sm md:text-base">{venueData.dressCode}</p>
               </div>
             </div>
           </ScrollReveal>
@@ -132,30 +132,35 @@ export default function Venue() {
         {venueData.images.length > 0 && (
           <ScrollReveal>
             <div className="relative">
-              <h3 className="text-xl font-heading font-bold text-primary-dark mb-4 text-center">
+              <h3 className="text-2xl font-heading font-bold text-white mb-6 text-center">
                 Suasana Venue
               </h3>
-              <div className="relative rounded-xl overflow-hidden h-[250px] md:h-[400px]">
+              <div className="relative rounded-2xl overflow-hidden h-[300px] md:h-[500px] border border-white/5 shadow-2xl">
                 {/* Stacked images for smooth crossfade */}
                 {venueData.images.map((image, idx) => (
                   <img
                     key={idx}
                     src={image.src}
                     alt={image.alt}
-                    className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-700 ease-in-out ${
-                      idx === currentImage ? "opacity-100" : "opacity-0"
+                    className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ease-in-out ${
+                      idx === currentImage ? "opacity-100 scale-105" : "opacity-0 scale-100"
                     }`}
                   />
                 ))}
 
                 {/* Image overlay for text readability */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
 
-                {/* Caption */}
-                <div className="absolute bottom-12 left-6 text-white">
-                  <h4 className="text-2xl md:text-4xl font-heading font-bold uppercase tracking-wide">
-                    {/* {venueData.images[currentImage].alt} */}
+                {/* Text Overlay — Judul & Subtitle gambar */}
+                <div className="absolute bottom-12 left-6 md:left-10 z-10">
+                  <h4 className="text-2xl md:text-4xl font-heading font-bold text-white tracking-wide drop-shadow-lg">
+                    {venueData.images[currentImage].title}
                   </h4>
+                  {venueData.images[currentImage].subtitle && (
+                    <p className="text-sm md:text-lg text-white/80 mt-1 drop-shadow-md">
+                      {venueData.images[currentImage].subtitle}
+                    </p>
+                  )}
                 </div>
 
                 {/* Navigation Arrows */}
@@ -163,14 +168,14 @@ export default function Venue() {
                   <>
                     <button
                       onClick={() => handleUserInteraction(prevImage)}
-                      className="absolute left-4 top-1/2 -translate-y-1/2 p-2 bg-black/50 text-white rounded-full hover:bg-black/70 transition-colors"
+                      className="absolute left-6 top-1/2 -translate-y-1/2 p-3 bg-black/50 backdrop-blur-md text-white rounded-full hover:bg-accent hover:text-primary-dark transition-all z-20"
                       aria-label="Foto sebelumnya"
                     >
                       <ChevronLeft size={24} />
                     </button>
                     <button
                       onClick={() => handleUserInteraction(nextImage)}
-                      className="absolute right-4 top-1/2 -translate-y-1/2 p-2 bg-black/50 text-white rounded-full hover:bg-black/70 transition-colors"
+                      className="absolute right-6 top-1/2 -translate-y-1/2 p-3 bg-black/50 backdrop-blur-md text-white rounded-full hover:bg-accent hover:text-primary-dark transition-all z-20"
                       aria-label="Foto berikutnya"
                     >
                       <ChevronRight size={24} />
@@ -179,13 +184,13 @@ export default function Venue() {
                 )}
 
                 {/* Dots Indicator */}
-                <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2">
+                <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-3 z-20">
                   {venueData.images.map((_, idx) => (
                     <button
                       key={idx}
                       onClick={() => handleUserInteraction(() => setCurrentImage(idx))}
-                      className={`w-2.5 h-2.5 rounded-full transition-all duration-300 ${
-                        idx === currentImage ? "bg-white scale-125" : "bg-white/50"
+                      className={`h-2 rounded-full transition-all duration-300 ${
+                        idx === currentImage ? "bg-accent w-8" : "bg-white/30 w-2 hover:bg-white/50"
                       }`}
                       aria-label={`Lihat foto ${idx + 1}`}
                     />
@@ -199,17 +204,17 @@ export default function Venue() {
         {/* Petunjuk Arah */}
         {venueData.petunjukArah.length > 0 && (
           <ScrollReveal delay={0.2}>
-            <div className="mt-12 bg-white rounded-xl p-6 shadow-sm">
-              <h3 className="text-xl font-heading font-bold text-primary-dark mb-4">
+            <div className="mt-12 bg-background-card/40 backdrop-blur-sm border border-white/5 rounded-2xl p-8 shadow-xl shadow-black/20">
+              <h3 className="text-2xl font-heading font-bold text-white mb-6">
                 Petunjuk Arah
               </h3>
-              <ol className="space-y-2">
+              <ol className="space-y-4">
                 {venueData.petunjukArah.map((step, idx) => (
                   <li
                     key={idx}
-                    className="flex items-start gap-3 text-primary/70"
+                    className="flex items-start gap-4 text-foreground-secondary text-lg"
                   >
-                    <span className="shrink-0 w-6 h-6 bg-accent/20 text-accent rounded-full flex items-center justify-center text-sm font-bold">
+                    <span className="shrink-0 w-8 h-8 bg-accent/20 text-accent rounded-xl flex items-center justify-center text-sm font-bold border border-accent/20">
                       {idx + 1}
                     </span>
                     {step}

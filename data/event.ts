@@ -8,11 +8,11 @@ export const eventData: {
   deskripsi: string;
   status: EventStatus;
 } = {
-  nama: "Gathering Keluarga Surosentono 2025",
-  tanggal: "2027-03-25", // Format: YYYY-MM-DD (sesuaikan tanggal asli)
+  nama: "Halal Bi Halal — Jejak Warisan Suro Sentono",
+  tanggal: "2027-03-27", // Format: YYYY-MM-DD (sesuaikan tanggal asli)
   waktu: "07:00 WIB - Selesai",
-  tagline: "Halal Bihalal Keluarga Besar Surosentono",
+  tagline: "Jejak Warisan Keluarga Besar",
   deskripsi:
-    "Acara gathering tahunan keluarga besar Surosentono untuk mempererat tali silaturahmi antar generasi. Mari berkumpul, berbagi cerita, dan membangun kenangan indah bersama.",
+    "Halal Bi Halal Keluarga Besar Suro Sentono, 27-28 Maret 2027 di Bina Karakter Hall. Mari berkumpul, berbagi cerita, dan membangun kenangan indah bersama.",
   status: "pre-event", // Ubah ke "post-event" setelah acara selesai
 };
