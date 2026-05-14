@@ -10,7 +10,7 @@ export const NAV_LINKS = [
   { label: "Beranda", href: "#beranda" },
   { label: "Tentang", href: "#tentang" },
   { label: "Kegiatan", href: "#kegiatan" },
-  { label: "Lokasi", href: "#lokasi" },
+  { label: "Lokasi & Fasilitas", href: "#lokasi" },
   { label: "Silsilah", href: "#silsilah" },
   { label: "Galeri", href: "#galeri" },
 ];
