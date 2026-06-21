@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,500;1,700;1,900&family=Archivo+Black&display=swap" rel="stylesheet">
+<style>
+  *{ box-sizing:border-box; margin:0; padding:0; }
+  body{ background:#16101f; }
+  ::selection{ background:#c6f03c; color:#16101f; }
+  input::placeholder{ color:rgba(255,255,255,.35); }
+  select option{ background:#241733; color:#fff; }
+  @media print{
+    @page{ size:landscape; margin:0; }
+    body *{ visibility:hidden !important; }
+    #ticketPrintArea, #ticketPrintArea *{ visibility:visible !important; }
+    #ticketPrintArea{ position:fixed; inset:0; margin:auto; }
+  }
+</style>
+</helmet>
+
+<div style="min-height:100vh; background:radial-gradient(120% 90% at 85% 0%, #2a1340 0%, #16101f 55%, #0e0a16 100%); font-family:'Archivo',sans-serif; color:#fff; padding:40px 28px 72px;">
+
+  <!-- top bar -->
+  <div style="max-width:1180px; margin:0 auto 34px; display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap;">
+    <div style="display:flex; align-items:center; gap:14px;">
+      <div style="width:13px; height:40px; background:#c6f03c;"></div>
+      <div>
+        <div style="font-size:11px; letter-spacing:.42em; font-weight:700; color:#c6f03c; text-transform:uppercase;">Jejak Warisan</div>
+        <div style="font-family:'Archivo Black',sans-serif; font-size:21px; letter-spacing:.02em; line-height:1; margin-top:3px;">SURO SENTONO</div>
+      </div>
+    </div>
+    <div style="text-align:right; font-size:11px; letter-spacing:.22em; font-weight:600; text-transform:uppercase; color:rgba(255,255,255,.6);">
+      27–28 Maret 2027<br><span style="color:#c6f03c;">Bina Karakter Hall</span>
+    </div>
+  </div>
+
+  <!-- heading -->
+  <div style="max-width:1180px; margin:0 auto 26px;">
+    <h1 style="font-family:'Archivo Black',sans-serif; font-size:clamp(38px,6vw,72px); line-height:.92; letter-spacing:-.01em; text-transform:uppercase;">
+      Buat Tiket<br><span style="color:#c6f03c;">Kamu Sendiri.</span>
+    </h1>
+    <p style="margin-top:14px; max-width:480px; font-size:15px; line-height:1.5; color:rgba(255,255,255,.6);">
+      Pilih nama keluarga dan jenis tiket, lalu tiket reuni akbar akan langsung jadi. Cetak atau simpan untuk dibawa ke acara.
+    </p>
+  </div>
+
+  <div style="max-width:1180px; margin:0 auto; display:grid; grid-template-columns:380px minmax(0,1fr); gap:30px; align-items:start;">
+
+    <!-- FORM -->
+    <div style="background:rgba(255,255,255,.04); border:1px solid rgba(255,255,255,.1); border-radius:4px; padding:26px 24px;">
+      <div style="display:flex; align-items:center; gap:9px; margin-bottom:22px;">
+        <div style="width:9px; height:22px; background:#c6f03c;"></div>
+        <h2 style="font-family:'Archivo Black',sans-serif; font-size:15px; letter-spacing:.16em; text-transform:uppercase;">Data Tiket</h2>
+      </div>
+
+      <label style="display:block; font-size:11px; letter-spacing:.18em; font-weight:700; text-transform:uppercase; color:#c6f03c; margin-bottom:8px;">Nama Lengkap</label>
+      <input type="text" value="{{ nama }}" onInput="{{ onNama }}" placeholder="Tulis nama tamu" style="width:100%; background:#241733; border:1px solid rgba(255,255,255,.14); border-radius:3px; color:#fff; font-family:'Archivo',sans-serif; font-size:15px; font-weight:600; padding:13px 14px; outline:none;" style-focus="border-color:#c6f03c;">
+
+      <label style="display:block; font-size:11px; letter-spacing:.18em; font-weight:700; text-transform:uppercase; color:#c6f03c; margin:20px 0 8px;">Nama Keluarga</label>
+      <div style="position:relative;">
+        <select value="{{ keluarga }}" onChange="{{ onKeluarga }}" style="width:100%; appearance:none; background:#241733; border:1px solid rgba(255,255,255,.14); border-radius:3px; color:#fff; font-family:'Archivo',sans-serif; font-size:15px; font-weight:600; padding:13px 40px 13px 14px; outline:none; cursor:pointer;" style-focus="border-color:#c6f03c;">
+          <sc-for list="{{ keluargaList }}" as="k" hint-placeholder-count="6">
+            <option value="{{ k }}">Keluarga {{ k }}</option>
+          </sc-for>
+        </select>
+        <div style="position:absolute; right:14px; top:50%; transform:translateY(-50%); pointer-events:none; color:#c6f03c; font-size:12px;">▼</div>
+      </div>
+
+      <label style="display:block; font-size:11px; letter-spacing:.18em; font-weight:700; text-transform:uppercase; color:#c6f03c; margin:20px 0 8px;">Jenis Tiket</label>
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:8px;">
+        <button onClick="{{ pickMakan }}" style="{{ makanBtnStyle }}">Hanya Makan<br><span style="font-size:11px; opacity:.7;">100K / pax</span></button>
+        <button onClick="{{ pickKamar }}" style="{{ kamarBtnStyle }}">Kamar &amp; Makan<br><span style="font-size:11px; opacity:.7;">200K / pax</span></button>
+      </div>
+
+      <label style="display:block; font-size:11px; letter-spacing:.18em; font-weight:700; text-transform:uppercase; color:#c6f03c; margin:20px 0 8px;">Jumlah Pax</label>
+      <div style="display:flex; align-items:center; gap:10px;">
+        <button onClick="{{ dec }}" style="width:46px; height:46px; flex:none; background:#241733; border:1px solid rgba(255,255,255,.14); border-radius:3px; color:#c6f03c; font-size:22px; font-weight:700; cursor:pointer;">−</button>
+        <div style="flex:1; text-align:center; background:#241733; border:1px solid rgba(255,255,255,.14); border-radius:3px; font-family:'Archivo Black',sans-serif; font-size:20px; padding:11px;">{{ pax }}</div>
+        <button onClick="{{ inc }}" style="width:46px; height:46px; flex:none; background:#241733; border:1px solid rgba(255,255,255,.14); border-radius:3px; color:#c6f03c; font-size:22px; font-weight:700; cursor:pointer;">+</button>
+      </div>
+
+      <div style="display:flex; align-items:baseline; justify-content:space-between; margin:24px 0 4px; padding-top:18px; border-top:1px solid rgba(255,255,255,.1);">
+        <span style="font-size:11px; letter-spacing:.18em; font-weight:700; text-transform:uppercase; color:rgba(255,255,255,.55);">Total</span>
+        <span style="font-family:'Archivo Black',sans-serif; font-size:28px; color:#c6f03c;">{{ totalLabel }}</span>
+      </div>
+
+      <button onClick="{{ generate }}" style="width:100%; margin-top:16px; background:#c6f03c; color:#16101f; border:none; border-radius:3px; font-family:'Archivo Black',sans-serif; font-size:14px; letter-spacing:.14em; text-transform:uppercase; padding:16px; cursor:pointer;" style-hover="background:#d6ff52;">Generate Tiket</button>
+      <button onClick="{{ print }}" style="width:100%; margin-top:9px; background:transparent; color:#fff; border:1px solid rgba(255,255,255,.2); border-radius:3px; font-family:'Archivo',sans-serif; font-weight:700; font-size:13px; letter-spacing:.12em; text-transform:uppercase; padding:13px; cursor:pointer;" style-hover="border-color:#c6f03c; color:#c6f03c;">Cetak / Simpan PDF</button>
+    </div>
+
+    <!-- TICKET PREVIEW -->
+    <div style="position:sticky; top:24px;">
+      <div style="font-size:11px; letter-spacing:.2em; font-weight:700; text-transform:uppercase; color:rgba(255,255,255,.4); margin-bottom:12px;">Pratinjau Tiket {{ issuedLabel }}</div>
+
+      <div id="ticketPrintArea" style="width:100%; aspect-ratio:3.35 / 1; border-radius:5px; overflow:hidden; box-shadow:0 30px 70px -20px rgba(0,0,0,.7); display:flex; background:{{ bodyBg }};">
+
+        <!-- STUB -->
+        <div style="width:23%; flex:none; background:{{ stubBg }}; color:{{ stubFg }}; position:relative; display:flex; align-items:stretch; border-right:3px dashed {{ bodyBg }};">
+          <div style="flex:1; padding:5% 0; display:flex; flex-direction:column; align-items:center; justify-content:space-between;">
+            <!-- barcode -->
+            <div style="width:62%; height:20%; background:{{ barcodeStyle }};"></div>
+            <!-- qr -->
+            <div style="width:52%; aspect-ratio:1; display:grid; grid-template-columns:repeat(13,1fr); grid-template-rows:repeat(13,1fr);">
+              <sc-for list="{{ qrCells }}" as="c" hint-placeholder-count="169">
+                <div style="background:{{ c.bg }};"></div>
+              </sc-for>
+            </div>
+          </div>
+          <!-- vertical title -->
+          <div style="writing-mode:vertical-rl; transform:rotate(180deg); font-family:'Archivo Black',sans-serif; font-size:clamp(15px,2.4vw,30px); letter-spacing:.01em; text-transform:uppercase; padding:6% 0; display:flex; align-items:center;">{{ stubTitle }}</div>
+        </div>
+
+        <!-- BODY -->
+        <div style="flex:1; position:relative; color:{{ bodyFg }}; overflow:hidden;">
+          <!-- topo contour bg -->
+          <div style="position:absolute; inset:0; background:{{ topoStyle }}; opacity:.5;"></div>
+          <!-- diagonal accent block -->
+          <div style="position:absolute; inset:0; background:{{ diagBg }}; clip-path:polygon(72% 0, 100% 0, 100% 100%, 88% 100%);"></div>
+          <div style="position:absolute; right:0; top:0; bottom:0; width:30%; background:{{ topoStyle2 }}; opacity:.5; clip-path:polygon(72% 0, 100% 0, 100% 100%, 88% 100%);"></div>
+
+          <div style="position:relative; height:100%; padding:5.5% 5%; display:flex; flex-direction:column;">
+            <div style="border-left:3px solid {{ bodyFg }}; padding-left:14px; flex:none;">
+              <div style="font-style:italic; font-weight:700; font-size:clamp(9px,1.4vw,14px); letter-spacing:.04em; text-transform:uppercase;">Jejak Warisan</div>
+              <div style="font-family:'Archivo Black',sans-serif; font-size:clamp(22px,4.3vw,52px); line-height:.92; letter-spacing:-.01em; text-transform:uppercase;">Suro Sentono</div>
+              <div style="font-weight:700; font-size:clamp(8px,1.1vw,12px); letter-spacing:.18em; margin-top:3px;">27–28 MARET 2027</div>
+            </div>
+
+            <div style="font-family:'Archivo Black',sans-serif; font-size:clamp(13px,2.1vw,24px); line-height:1; text-transform:uppercase; margin-top:auto;">Bina Karakter<br>Hall</div>
+
+            <div style="display:flex; gap:6%; align-items:flex-end; margin-top:auto;">
+              <div style="flex:1; min-width:0;">
+                <div style="font-weight:800; font-size:clamp(8px,1.2vw,13px); letter-spacing:.06em;">ATAS NAMA :</div>
+                <div style="font-family:'Archivo Black',sans-serif; font-size:clamp(12px,1.9vw,21px); line-height:1.02; text-transform:uppercase; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;">{{ namaLabel }}</div>
+                <div style="font-weight:700; font-size:clamp(8px,1.15vw,13px); letter-spacing:.04em; margin-top:2px; opacity:.85;">{{ keluargaLabel }} · {{ paxLabel }}</div>
+                <div style="font-weight:600; font-size:clamp(7px,1vw,11px); letter-spacing:.05em; margin-top:5px; opacity:.7;">{{ deskripsi }}</div>
+              </div>
+              <div style="flex:none;">
+                <div style="font-weight:800; font-size:clamp(8px,1.2vw,13px); letter-spacing:.1em;">PRICE</div>
+                <div style="font-family:'Archivo Black',sans-serif; font-size:clamp(18px,3.4vw,40px); line-height:.9; white-space:nowrap;">{{ priceLabel }}</div>
+              </div>
+            </div>
+
+            <div style="position:absolute; right:5%; bottom:4%; font-style:italic; font-weight:700; font-size:clamp(8px,1.1vw,13px); color:{{ orgColor }};">organized by the <span style="font-weight:900;">prakoso.</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div style="margin-top:12px; font-size:12px; letter-spacing:.04em; color:rgba(255,255,255,.45); display:flex; justify-content:space-between;">
+        <span>No. Tiket: <span style="color:#c6f03c; font-weight:700;">{{ ticketNo }}</span></span>
+        <span>{{ qrSeedLabel }}</span>
+      </div>
+    </div>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = {
+    nama: "",
+    keluarga: "Prakoso",
+    jenis: "makan",
+    pax: 1,
+    issued: false,
+    serial: 0,
+  };
+
+  keluargaList = ["Prakoso", "Wibowo", "Hadiningrat", "Sastrowardoyo", "Notonegoro", "Kusumo", "Atmodjo"];
+
+  hash(str){
+    let h = 2166136261;
+    for(let i=0;i<str.length;i++){ h ^= str.charCodeAt(i); h = Math.imul(h, 16777619); }
+    return (h >>> 0);
+  }
+
+  makeQR(seed){
+    // 13x13 deterministic pseudo-QR with finder squares
+    const N = 13;
+    let s = this.hash(seed) || 1;
+    const rnd = () => { s = (Math.imul(s, 1103515245) + 12345) >>> 0; return (s >>> 8) / (1<<24); };
+    const grid = Array.from({length:N}, () => Array(N).fill(0));
+    for(let y=0;y<N;y++) for(let x=0;x<N;x++) grid[y][x] = rnd() > 0.5 ? 1 : 0;
+    // finder pattern helper
+    const finder = (ox,oy) => {
+      for(let y=0;y<7;y++) for(let x=0;x<7;x++){
+        const edge = (x===0||x===6||y===0||y===6);
+        const core = (x>=2&&x<=4&&y>=2&&y<=4);
+        grid[oy+y][ox+x] = (edge||core) ? 1 : 0;
+      }
+    };
+    finder(0,0); finder(N-7,0); finder(0,N-7);
+    // quiet ring around finders
+    return grid;
+  }
+
+  renderVals(){
+    const { nama, keluarga, jenis, pax, issued, serial } = this.state;
+    const isMakan = jenis === "makan";
+
+    const lime = "#c6f03c";
+    const purple = "#9d1ae0";
+
+    const theme = isMakan
+      ? { stubBg: lime, stubFg: purple, bodyBg: purple, bodyFg: lime, diag: purple, org: lime }
+      : { stubBg: purple, stubFg: lime, bodyBg: lime, bodyFg: purple, diag: lime, org: purple };
+
+    const barcodeColor = theme.stubFg;
+    const barcodeStyle = `repeating-linear-gradient(90deg, ${barcodeColor} 0 2px, transparent 2px 3px, ${barcodeColor} 3px 7px, transparent 7px 9px, ${barcodeColor} 9px 11px, transparent 11px 14px)`;
+
+    // topo contour rings
+    const contour = isMakan ? "rgba(255,255,255,.16)" : "rgba(157,26,224,.16)";
+    const topoStyle = `repeating-radial-gradient(ellipse 130% 90% at 22% 55%, transparent 0 13px, ${contour} 13px 15px)`;
+    const contour2 = isMakan ? "rgba(157,26,224,.5)" : "rgba(255,255,255,.35)";
+    const topoStyle2 = `repeating-radial-gradient(ellipse 120% 90% at 90% 40%, transparent 0 11px, ${contour2} 11px 13px)`;
+
+    const seed = (nama.trim() || "TAMU") + "|" + keluarga + "|" + jenis;
+    const grid = this.makeQR(seed);
+    const qrCells = [];
+    for(let y=0;y<13;y++) for(let x=0;x<13;x++){
+      qrCells.push({ bg: grid[y][x] ? theme.stubFg : "transparent" });
+    }
+
+    const priceNum = isMakan ? 100000 : 200000;
+    const total = priceNum * pax;
+    const fmt = (n) => "Rp " + n.toLocaleString("id-ID");
+
+    const h = this.hash(seed);
+    const ticketNo = issued
+      ? "SS27-" + (isMakan ? "M" : "K") + "-" + String((h % 90000) + 10000)
+      : "—— —— ——";
+
+    return {
+      nama, keluarga,
+      keluargaList: this.keluargaList,
+      pax,
+      paxLabel: pax + " PAX",
+      namaLabel: nama.trim() ? nama.trim().toUpperCase() : "NAMA TAMU",
+      keluargaLabel: "KELUARGA " + keluarga.toUpperCase(),
+      stubTitle: isMakan ? "TIKET HANYA MAKAN" : "TIKET KAMAR & MAKAN",
+      deskripsi: isMakan
+        ? "Berlaku 1 orang, sudah termasuk 3 kali makan."
+        : "Berlaku 1 orang, sudah termasuk kamar 1 kasur & 3 kali makan.",
+      priceLabel: isMakan ? "100K/PAX" : "200K/PAX",
+      totalLabel: fmt(total),
+      ticketNo,
+      issuedLabel: issued ? "· TERBIT" : "",
+      qrSeedLabel: issued ? ("KODE " + (h % 1000000).toString().padStart(6,"0")) : "Belum digenerate",
+
+      // theme
+      stubBg: theme.stubBg, stubFg: theme.stubFg,
+      bodyBg: theme.bodyBg, bodyFg: theme.bodyFg,
+      diagBg: theme.diag, orgColor: theme.org,
+      barcodeStyle, topoStyle, topoStyle2,
+      qrCells,
+
+      // jenis buttons
+      makanBtnStyle: this.btnStyle(isMakan),
+      kamarBtnStyle: this.btnStyle(!isMakan),
+
+      // handlers
+      onNama: (e) => this.setState({ nama: e.target.value, issued: false }),
+      onKeluarga: (e) => this.setState({ keluarga: e.target.value, issued: false }),
+      pickMakan: () => this.setState({ jenis: "makan", issued: false }),
+      pickKamar: () => this.setState({ jenis: "kamar", issued: false }),
+      inc: () => this.setState(s => ({ pax: Math.min(99, s.pax + 1), issued: false })),
+      dec: () => this.setState(s => ({ pax: Math.max(1, s.pax - 1), issued: false })),
+      generate: () => this.setState(s => ({ issued: true, serial: s.serial + 1 })),
+      print: () => window.print(),
+    };
+  }
+
+  btnStyle(active){
+    const base = "border-radius:3px; font-family:'Archivo',sans-serif; font-weight:800; font-size:13px; line-height:1.15; text-transform:uppercase; padding:12px 10px; cursor:pointer; text-align:left; transition:all .15s;";
+    return active
+      ? base + "background:#c6f03c; color:#16101f; border:1px solid #c6f03c;"
+      : base + "background:#241733; color:#fff; border:1px solid rgba(255,255,255,.14);";
+  }
+}
+</script>
+</body>
+</html>
