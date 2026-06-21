@@ -1,8 +1,6 @@
 import type { Metadata } from "next";
 import { Outfit, Inter, Playfair_Display } from "next/font/google";
-import Navbar from "@/components/layout/Navbar";
-import Footer from "@/components/layout/Footer";
-import FloatingWhatsApp from "@/components/layout/FloatingWhatsApp";
+import AppShell from "@/components/layout/AppShell";
 import "./globals.css";
 
 const outfit = Outfit({
@@ -68,10 +66,7 @@ export default function RootLayout({
       className={`${outfit.variable} ${inter.variable} ${playfair.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col font-body">
-        <Navbar />
-        <main className="flex-1">{children}</main>
-        <Footer />
-        <FloatingWhatsApp />
+        <AppShell>{children}</AppShell>
       </body>
     </html>
   );
