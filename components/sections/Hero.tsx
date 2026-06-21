@@ -34,7 +34,7 @@ export default function Hero() {
           <img
             src="/images/branding/moto.png"
             alt="Jejak Warisan Mbah Suro Sentono"
-            className="w-[300px] mb-15 sm:w-[360px] md:w-[450px] lg:w-[530px] xl:w-[650px] h-auto"
+            className="w-[300px] mb-15 sm:w-[360px] md:w-[450px] lg:w-[500px] xl:w-[600px] h-auto"
           />
         </motion.div>
 
@@ -94,7 +94,7 @@ export default function Hero() {
       </div>
 
       {/* Scroll Indicator */}
-      <motion.div
+      {/* <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1.5 }}
@@ -103,7 +103,7 @@ export default function Hero() {
         <a href="#tentang" aria-label="Scroll ke bawah">
           <ChevronDown size={32} className="text-white animate-bounce" />
         </a>
-      </motion.div>
+      </motion.div> */}
     </section>
   );
 }
